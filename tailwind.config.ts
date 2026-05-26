@@ -9,8 +9,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        brand:   "var(--brand)",
+        "brand-lt": "var(--brand-lt)",
+        ink:     "var(--ink)",
+        paper:   "var(--paper)",
+        coral:   "var(--coral)",
+        gold:    "var(--gold)",
+        mid:     "var(--mid)",
+      },
+      fontFamily: {
+        display: ["Syne", "sans-serif"],
+        sans:    ["DM Sans", "sans-serif"],
+      },
+      fontSize: {
+        hero: "clamp(48px, 7vw, 96px)",
+      },
+      borderRadius: {
+        DEFAULT: "2px",
+        sm: "2px",
+        md: "4px",
+      },
+      animation: {
+        fadeup: "fadeUp 0.7s ease forwards",
+        ticker: "ticker 28s linear infinite",
       },
     },
   },

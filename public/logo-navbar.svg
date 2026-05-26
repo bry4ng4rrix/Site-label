@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" width="260" height="48">
+  <!-- LT Badge -->
+  <rect x="0" y="4" width="42" height="40" rx="2" fill="#1E3FAB"/>
+  <!-- L -->
+  <rect x="7" y="12" width="5" height="22" rx="0.5" fill="#FFFFFF"/>
+  <rect x="7" y="29" width="13" height="5" rx="0.5" fill="#FFFFFF"/>
+  <!-- T -->
+  <rect x="22" y="12" width="14" height="5" rx="0.5" fill="#FFFFFF"/>
+  <rect x="27" y="12" width="5" height="22" rx="0.5" fill="#FFFFFF"/>
+
+  <!-- Separator line -->
+  <line x1="54" y1="8" x2="54" y2="40" stroke="#1E3FAB" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- LABEL TECHNOLOGY text -->
+  <text x="64" y="22" font-family="'Arial Black', 'Arial', sans-serif" font-weight="900" font-size="15" fill="#1E3FAB" letter-spacing="1">LABEL</text>
+  <text x="64" y="38" font-family="'Arial', sans-serif" font-weight="400" font-size="10.5" fill="#1E3FAB" letter-spacing="3.5">TECHNOLOGY</text>
+</svg>
