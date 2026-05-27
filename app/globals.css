@@ -42,8 +42,8 @@ body {
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(46,85,212,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46,85,212,0.06) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -62,7 +62,11 @@ body {
   50%       { opacity: 0.5; transform: scale(1.4); }
 }
 
-.animate-fadeup  { animation: fadeUp 0.7s ease forwards; }
+.animate-fadeup          { animation: fadeUp 0.7s ease both; }
+.animate-fadeup-d1       { animation: fadeUp 0.7s 0.1s ease both; }
+.animate-fadeup-d2       { animation: fadeUp 0.7s 0.2s ease both; }
+.animate-fadeup-d3       { animation: fadeUp 0.7s 0.35s ease both; }
+.animate-fadeup-d5       { animation: fadeUp 0.7s 0.55s ease both; }
 .animate-ticker  { animation: ticker 28s linear infinite; }
 .pulse-dot       { animation: pulse-dot 1.8s ease-in-out infinite; }
 

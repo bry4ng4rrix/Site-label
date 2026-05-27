@@ -76,9 +76,9 @@ export default function AgentDashboard() {
       {/* Stats */}
       <div className="grid grid-cols-4 divide-x text-center py-4" style={{ borderColor:"rgba(255,255,255,0.06)" }}>
         {(Object.entries(counts) as [Status, number][]).map(([status, count]) => (
-          <div key={status}>
+          <div key={status} className="px-1">
             <div className="font-display text-2xl" style={{ color: COLORS[status] }}>{count}</div>
-            <div className="label-tag text-[9px] text-white/30 mt-0.5">{status}</div>
+            <div className="label-tag text-white/30 mt-0.5 truncate" style={{ fontSize: "8px" }}>{status}</div>
           </div>
         ))}
       </div>
