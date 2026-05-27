@@ -38,7 +38,7 @@ export default function Footer() {
               Développement, Call Center, Marketing, Data et Matériel IT.
             </p>
             <div className="space-y-2 text-sm text-white/30">
-              <p>Akany Riandrano, Manajak Ilafy</p>
+              <p>Akany Riandrano, Manjaka Ilafy</p>
               <p>Antananarivo Avaradrano, Madagascar</p>
               <a
                 href="tel:+261340503129"
