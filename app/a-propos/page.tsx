@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CtaSection from "@/components/home/CtaSection";
+import MiniTestimonials from "@/components/shared/MiniTestimonials";
+
+const GrowthChart = dynamic(() => import("@/components/apropos/GrowthChart"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "À Propos — Label Technology, fondée en 2022 à Antananarivo",
   description:
     "4 ans d'expérience, 60+ collaborateurs, 6 pôles de services. Label Technology : la tech malgache au niveau européen. Notre histoire, nos valeurs, notre équipe.",
 };
-import MiniTestimonials from "@/components/shared/MiniTestimonials";
 
 const EQUIPE = [
-  { initiales: "LT", nom: "Direction", role: "Fondateur & CEO", desc: "Vision stratégique, développement commercial international. 4 ans à construire Label Technology depuis Antananarivo." },
-  { initiales: "DT", nom: "Pôle Dev", role: "Lead Développeur", desc: "Architecte des projets web et mobile. Expert Next.js, Node.js, PostgreSQL. Certifié AWS Solutions Architect." },
-  { initiales: "CC", nom: "Pôle Call Center", role: "Responsable Opérations", desc: "Supervision des 50 agents. Standards qualité, formation continue, SLA clients. Ancienne consultante CCaaS Paris." },
-  { initiales: "MK", nom: "Pôle Marketing", role: "Head of Digital", desc: "SEO, Ads, social media. Ex-agence digitale à Bruxelles. Gère les stratégies digitales de nos clients FR/EU." },
-  { initiales: "DS", nom: "Pôle Data", role: "Data Manager", desc: "Traitement de données à grande échelle, pipelines ETL, datavisualisation. Python, SQL, Power BI." },
-  { initiales: "IT", nom: "Pôle Infra", role: "Responsable IT", desc: "Parc matériel, réseau, infrastructure. Certifications Cisco et Microsoft. Support technique de l'ensemble de l'équipe." },
+  { photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&q=80", nom: "Direction", role: "Fondateur & CEO", desc: "Vision stratégique, développement commercial international. 4 ans à construire Label Technology depuis Antananarivo." },
+  { photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&q=80", nom: "Pôle Dev", role: "Lead Développeur", desc: "Architecte des projets web et mobile. Expert Next.js, Node.js, PostgreSQL. Certifié AWS Solutions Architect." },
+  { photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&q=80", nom: "Pôle Call Center", role: "Responsable Opérations", desc: "Supervision des 50 agents. Standards qualité, formation continue, SLA clients. Ancienne consultante CCaaS Paris." },
+  { photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80", nom: "Pôle Marketing", role: "Head of Digital", desc: "SEO, Ads, social media. Ex-agence digitale à Bruxelles. Gère les stratégies digitales de nos clients FR/EU." },
+  { photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&q=80", nom: "Pôle Data", role: "Data Manager", desc: "Traitement de données à grande échelle, pipelines ETL, datavisualisation. Python, SQL, Power BI." },
+  { photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80", nom: "Pôle Infra", role: "Responsable IT", desc: "Parc matériel, réseau, infrastructure. Certifications Cisco et Microsoft. Support technique de l'ensemble de l'équipe." },
 ];
 
 const TEMOIGNAGES_CLIENTS = [
@@ -105,47 +109,7 @@ export default function AProposPage() {
                 </p>
               </div>
             </div>
-            <div className="p-8 rounded-sm border"
-              style={{ backgroundColor: "var(--white)", borderColor: "rgba(0,0,0,0.08)" }}>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <span className="font-display text-4xl" style={{ color: "var(--brand)" }}>2022</span>
-                  <div>
-                    <p className="font-medium text-sm mb-1" style={{ color: "var(--ink)" }}>Fondation</p>
-                    <p className="text-sm font-light" style={{ color: "var(--mid)" }}>
-                      Création de Label Technology à Antananarivo avec une équipe de 10 personnes.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="font-display text-4xl" style={{ color: "var(--brand)" }}>2023</span>
-                  <div>
-                    <p className="font-medium text-sm mb-1" style={{ color: "var(--ink)" }}>Call Center 20 postes</p>
-                    <p className="text-sm font-light" style={{ color: "var(--mid)" }}>
-                      Ouverture du pôle Call Center avec 20 agents certifiés FR/EN.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="font-display text-4xl" style={{ color: "var(--brand)" }}>2024</span>
-                  <div>
-                    <p className="font-medium text-sm mb-1" style={{ color: "var(--ink)" }}>50 postes & 6 pôles</p>
-                    <p className="text-sm font-light" style={{ color: "var(--mid)" }}>
-                      Extension à 50 postes call center et déploiement de tous les pôles de services.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="font-display text-4xl" style={{ color: "var(--brand)" }}>2026</span>
-                  <div>
-                    <p className="font-medium text-sm mb-1" style={{ color: "var(--ink)" }}>60+ collaborateurs</p>
-                    <p className="text-sm font-light" style={{ color: "var(--mid)" }}>
-                      Équipe de 60 experts, clients en France, Afrique et Madagascar.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <GrowthChart />
           </div>
         </div>
       </section>
@@ -183,10 +147,13 @@ export default function AProposPage() {
             {EQUIPE.map((m, i) => (
               <div key={i} className="p-7 border rounded-sm card-hover"
                 style={{ borderColor: "rgba(0,0,0,0.08)", backgroundColor: "var(--white)" }}>
-                <div className="w-12 h-12 rounded-sm flex items-center justify-center font-display text-lg text-white mb-5"
-                  style={{ backgroundColor: "var(--brand)" }}>
-                  {m.initiales}
-                </div>
+                <Image
+                  src={m.photo}
+                  alt={m.nom}
+                  width={56}
+                  height={56}
+                  className="rounded-full object-cover mb-5"
+                />
                 <h3 className="font-display text-lg mb-0.5" style={{ color: "var(--ink)" }}>{m.nom}</h3>
                 <p className="label-tag text-[10px] mb-3" style={{ color: "var(--brand)" }}>{m.role}</p>
                 <p className="text-sm font-light leading-relaxed" style={{ color: "var(--mid)" }}>{m.desc}</p>

@@ -1,67 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, lazy } from "react";
 import Link from "next/link";
 
+const PerformanceChart = lazy(() => import("@/components/callcenter/PerformanceChart"));
+
 const METRICS = [
-  { value: "50", label: "postes opérationnels" },
-  { value: "FR/EN", label: "bilingue certifié" },
+  { value: "50",     label: "postes opérationnels" },
+  { value: "FR/EN",  label: "bilingue certifié" },
   { value: "24h/24", label: "disponibilité" },
-  { value: "100%", label: "reporting client" },
+  { value: "100%",   label: "reporting client" },
 ];
-
-type AgentStatus = "DISPONIBLE" | "EN APPEL" | "PAUSE";
-
-type Agent = {
-  id: number;
-  name: string;
-  status: AgentStatus;
-  duration: string;
-};
-
-const INITIAL_AGENTS: Agent[] = [
-  { id: 1,  name: "Haja R.",    status: "EN APPEL",   duration: "04:32" },
-  { id: 2,  name: "Miora T.",   status: "EN APPEL",   duration: "11:08" },
-  { id: 3,  name: "Faniry A.",  status: "DISPONIBLE", duration: "" },
-  { id: 4,  name: "Vola M.",    status: "EN APPEL",   duration: "02:17" },
-  { id: 5,  name: "Rado B.",    status: "PAUSE",      duration: "03:00" },
-  { id: 6,  name: "Tiana J.",   status: "EN APPEL",   duration: "07:44" },
-  { id: 7,  name: "Lalao S.",   status: "DISPONIBLE", duration: "" },
-  { id: 8,  name: "Fara N.",    status: "EN APPEL",   duration: "01:55" },
-  { id: 9,  name: "Noro H.",    status: "EN APPEL",   duration: "09:21" },
-  { id: 10, name: "Zo R.",      status: "PAUSE",      duration: "01:00" },
-  { id: 11, name: "Soa T.",     status: "DISPONIBLE", duration: "" },
-  { id: 12, name: "Bodo M.",    status: "EN APPEL",   duration: "05:38" },
-];
-
-const STATUS_COLORS: Record<AgentStatus, string> = {
-  "EN APPEL":   "#22c55e",
-  "DISPONIBLE": "var(--brand-lt)",
-  "PAUSE":      "var(--gold)",
-};
 
 export default function CallCenterHighlight() {
-  const [agents, setAgents] = useState<Agent[]>(INITIAL_AGENTS);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAgents(prev =>
-        prev.map(agent => {
-          if (Math.random() < 0.12) {
-            const statuses: AgentStatus[] = ["EN APPEL", "DISPONIBLE", "PAUSE"];
-            const next = statuses[Math.floor(Math.random() * statuses.length)];
-            return { ...agent, status: next, duration: next === "EN APPEL" ? "00:01" : "" };
-          }
-          return agent;
-        })
-      );
-    }, 2800);
-    return () => clearInterval(interval);
-  }, []);
-
-  const enAppel   = agents.filter(a => a.status === "EN APPEL").length;
-  const dispo     = agents.filter(a => a.status === "DISPONIBLE").length;
-  const pause     = agents.filter(a => a.status === "PAUSE").length;
-
   return (
     <section className="py-24 px-6 grid-bg" style={{ backgroundColor: "var(--ink)" }}>
       <div className="max-w-7xl mx-auto">
@@ -80,7 +31,6 @@ export default function CallCenterHighlight() {
               Coûts jusqu'à 60% inférieurs à l'Europe. 50 postes opérationnels, reporting temps réel.
             </p>
 
-            {/* Métriques */}
             <div className="grid grid-cols-2 gap-px bg-white/10 mb-10">
               {METRICS.map((m, i) => (
                 <div key={i} className="py-6 px-5" style={{ backgroundColor: "rgba(255,255,255,0.03)" }}>
@@ -101,79 +51,18 @@ export default function CallCenterHighlight() {
             </Link>
           </div>
 
-          {/* Right — Dashboard animé */}
+          {/* Right — Graphique de performance */}
           <div
             className="rounded-sm overflow-hidden border"
             style={{ borderColor: "rgba(255,255,255,0.08)", backgroundColor: "rgba(0,0,0,0.4)" }}
           >
-            {/* Header dashboard */}
-            <div
-              className="flex items-center justify-between px-5 py-3 border-b"
-              style={{ borderColor: "rgba(255,255,255,0.06)" }}
-            >
-              <span className="label-tag text-white/40 text-[10px]">TABLEAU DE BORD — AGENTS EN DIRECT</span>
-              <span className="flex items-center gap-1.5 text-[10px] text-white/30">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot inline-block" />
-                LIVE
-              </span>
-            </div>
-
-            {/* Stats bar */}
-            <div
-              className="grid grid-cols-3 divide-x text-center py-3"
-              style={{ borderColor: "rgba(255,255,255,0.06)" }}
-            >
-              <div>
-                <div className="font-display text-xl text-green-400">{enAppel}</div>
-                <div className="label-tag text-[9px] text-white/30">EN APPEL</div>
+            <Suspense fallback={
+              <div className="h-64 flex items-center justify-center">
+                <span className="text-white/20 text-xs label-tag">Chargement...</span>
               </div>
-              <div>
-                <div className="font-display text-xl" style={{ color: "var(--brand-lt)" }}>{dispo}</div>
-                <div className="label-tag text-[9px] text-white/30">DISPONIBLE</div>
-              </div>
-              <div>
-                <div className="font-display text-xl" style={{ color: "var(--gold)" }}>{pause}</div>
-                <div className="label-tag text-[9px] text-white/30">PAUSE</div>
-              </div>
-            </div>
-
-            {/* Agent list */}
-            <div className="divide-y" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
-              {agents.map(agent => (
-                <div
-                  key={agent.id}
-                  className="flex items-center justify-between px-5 py-2.5 hover:bg-white/5 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <span
-                      className="w-2 h-2 rounded-full pulse-dot inline-block"
-                      style={{ backgroundColor: STATUS_COLORS[agent.status] }}
-                    />
-                    <span className="text-white/60 text-xs">{agent.name}</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    {agent.duration && (
-                      <span className="text-white/20 text-[10px] font-mono">{agent.duration}</span>
-                    )}
-                    <span
-                      className="label-tag text-[9px] px-2 py-0.5 rounded-sm"
-                      style={{
-                        color: STATUS_COLORS[agent.status],
-                        backgroundColor: `${STATUS_COLORS[agent.status]}15`,
-                      }}
-                    >
-                      {agent.status}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="px-5 py-3 border-t text-center" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-              <span className="text-white/20 text-[10px]">
-                + {50 - INITIAL_AGENTS.length} agents • Simulation en temps réel
-              </span>
-            </div>
+            }>
+              <PerformanceChart />
+            </Suspense>
           </div>
 
         </div>

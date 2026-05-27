@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const TESTIMONIALS = [
   {
     quote: "On cherchait un call center sérieux pour la France. On a trouvé une équipe qui parle mieux notre marché que certains de nos propres commerciaux.",
@@ -8,6 +10,7 @@ const TESTIMONIALS = [
     location: "Lyon, France",
     tag: "Call Center",
     color: "var(--gold)",
+    avatar: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=80&h=80&fit=crop&q=80",
   },
   {
     quote: "Label Technology nous a livré notre application en 6 semaines, dans les délais et le budget. Le suivi post-livraison est exemplaire. On repart pour un deuxième projet.",
@@ -16,14 +19,16 @@ const TESTIMONIALS = [
     location: "Antananarivo, Madagascar",
     tag: "Développement Web",
     color: "var(--brand)",
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&q=80",
   },
   {
     quote: "La numérisation de nos archives s'est faite sans interruption de service. 80 000 documents traités en trois mois. Sérieux, discrets, et d'une précision remarquable.",
-    author: "Directeur des systèmes d'information",
+    author: "Directrice des systèmes d'information",
     company: "Institution publique",
     location: "Madagascar",
     tag: "Traitement de données",
     color: "var(--brand-lt)",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&q=80",
   },
 ];
 
@@ -45,7 +50,6 @@ export default function Testimonials() {
               className="p-8 flex flex-col"
               style={{ backgroundColor: "var(--white)" }}
             >
-              {/* Tag */}
               <span
                 className="label-tag text-[10px] mb-6 self-start px-2 py-1"
                 style={{ backgroundColor: `color-mix(in srgb, ${t.color} 12%, transparent)`, color: t.color }}
@@ -53,7 +57,6 @@ export default function Testimonials() {
                 {t.tag}
               </span>
 
-              {/* Quote mark */}
               <div
                 className="font-display text-5xl leading-none mb-4 opacity-20"
                 style={{ color: t.color }}
@@ -61,7 +64,6 @@ export default function Testimonials() {
                 "
               </div>
 
-              {/* Quote */}
               <p
                 className="text-base leading-relaxed font-light mb-8 flex-1"
                 style={{ color: "var(--ink)" }}
@@ -69,16 +71,21 @@ export default function Testimonials() {
                 {t.quote}
               </p>
 
-              {/* Author */}
-              <div className="border-t pt-5" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
-                <div
-                  className="font-medium text-sm mb-0.5"
-                  style={{ color: "var(--ink)" }}
-                >
-                  {t.author}
-                </div>
-                <div className="text-xs" style={{ color: "var(--mid)" }}>
-                  {t.company} · {t.location}
+              <div className="border-t pt-5 flex items-center gap-3" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
+                <Image
+                  src={t.avatar}
+                  alt={t.author}
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover shrink-0"
+                />
+                <div>
+                  <div className="font-medium text-sm mb-0.5" style={{ color: "var(--ink)" }}>
+                    {t.author}
+                  </div>
+                  <div className="text-xs" style={{ color: "var(--mid)" }}>
+                    {t.company} · {t.location}
+                  </div>
                 </div>
               </div>
             </div>
