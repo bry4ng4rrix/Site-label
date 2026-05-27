@@ -24,18 +24,20 @@ export async function sendContact(
     return { status: "error", message: "Adresse email invalide." };
   }
 
-  // TODO: remplacer par Resend une fois la clé API configurée
-  // import { Resend } from "resend";
-  // const resend = new Resend(process.env.RESEND_API_KEY);
-  // await resend.emails.send({
-  //   from: "site@labeltechnology.mg",
-  //   to: "contact@labeltechnology.mg",
-  //   subject: `Nouveau message de ${name} — ${service || "Non précisé"}`,
-  //   text: `Nom: ${name}\nEntreprise: ${company}\nEmail: ${email}\nService: ${service}\n\n${message}`,
-  // });
-
-  // Simulation succès (en prod, appeler Resend ci-dessus)
-  console.log("Contact form:", { name, company, email, service, message });
+  if (process.env.RESEND_API_KEY) {
+    try {
+      const { Resend } = await import("resend");
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      await resend.emails.send({
+        from: "site@labeltechnology.mg",
+        to: "contact@labeltechnology.mg",
+        subject: `Nouveau message de ${name} — ${service || "Non précisé"}`,
+        text: `Nom: ${name}\nEntreprise: ${company}\nEmail: ${email}\nService: ${service}\n\n${message}`,
+      });
+    } catch {
+      return { status: "error", message: "Erreur lors de l'envoi. Veuillez réessayer ou nous appeler directement." };
+    }
+  }
 
   return {
     status: "success",
