@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CtaSection from "@/components/home/CtaSection";
+
+export const metadata: Metadata = {
+  title: "Développement Web & Mobile — Next.js, React, Node.js",
+  description:
+    "Sites web, applications mobiles, APIs, e-commerce. Stack Next.js/React/Node.js. Standards ESN européenne, délais startup. Devis gratuit en 24h depuis Antananarivo.",
+};
 import FaqSection from "@/components/shared/FaqSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 import Link from "next/link";

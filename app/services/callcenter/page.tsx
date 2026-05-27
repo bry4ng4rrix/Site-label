@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
+
+export const metadata: Metadata = {
+  title: "Call Center 50 Postes FR/EN — Prospection B2B & Support Client",
+  description:
+    "Externalisez votre call center à Antananarivo. 50 postes opérationnels, bilingue FR/EN, 24h/24. Prospection B2B, qualification de fichiers, support client. Activation < 2h.",
+};
 import Footer from "@/components/layout/Footer";
 import AgentDashboard from "@/components/callcenter/AgentDashboard";
 import WhyMadagascar from "@/components/callcenter/WhyMadagascar";

@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CtaSection from "@/components/home/CtaSection";
+
+export const metadata: Metadata = {
+  title: "À Propos — Label Technology, fondée en 2022 à Antananarivo",
+  description:
+    "4 ans d'expérience, 60+ collaborateurs, 6 pôles de services. Label Technology : la tech malgache au niveau européen. Notre histoire, nos valeurs, notre équipe.",
+};
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 
 const EQUIPE = [

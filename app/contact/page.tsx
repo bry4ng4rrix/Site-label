@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ContactForm from "@/components/contact/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact — Démarrez votre projet avec Label Technology",
+  description:
+    "Contactez Label Technology pour démarrer votre projet. Développement web, call center, marketing digital, ERP. Réponse sous 24h. Antananarivo, Madagascar.",
+};
 
 export default function ContactPage() {
   return (
@@ -64,56 +72,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right — Form */}
-            <div className="p-8 rounded-sm border" style={{ backgroundColor: "var(--white)", borderColor: "rgba(0,0,0,0.08)" }}>
-              <h2 className="font-display text-2xl mb-6" style={{ color: "var(--ink)" }}>Envoyer un message</h2>
-              <form className="space-y-5" action="mailto:contact@labeltechnology.mg" method="post">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>PRÉNOM & NOM *</label>
-                    <input required type="text" name="name" placeholder="Jean Dupont"
-                      className="w-full px-4 py-3 text-sm border rounded-sm outline-none focus:border-brand transition-colors"
-                      style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }} />
-                  </div>
-                  <div>
-                    <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>ENTREPRISE</label>
-                    <input type="text" name="company" placeholder="Votre société"
-                      className="w-full px-4 py-3 text-sm border rounded-sm outline-none focus:border-brand transition-colors"
-                      style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }} />
-                  </div>
-                </div>
-                <div>
-                  <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>EMAIL PROFESSIONNEL *</label>
-                  <input required type="email" name="email" placeholder="jean@entreprise.com"
-                    className="w-full px-4 py-3 text-sm border rounded-sm outline-none transition-colors"
-                    style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }} />
-                </div>
-                <div>
-                  <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>SERVICE CONCERNÉ</label>
-                  <select name="service"
-                    className="w-full px-4 py-3 text-sm border rounded-sm outline-none transition-colors bg-white"
-                    style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }}>
-                    <option value="">Choisir un service...</option>
-                    <option value="dev">Développement Web & Mobile</option>
-                    <option value="callcenter">Call Center</option>
-                    <option value="marketing">Marketing Digital</option>
-                    <option value="digital">Digitalisation</option>
-                    <option value="data">Traitement de données</option>
-                    <option value="materiel">Matériel informatique</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>VOTRE MESSAGE *</label>
-                  <textarea required name="message" rows={5} placeholder="Décrivez votre projet ou votre besoin..."
-                    className="w-full px-4 py-3 text-sm border rounded-sm outline-none transition-colors resize-none"
-                    style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }} />
-                </div>
-                <button type="submit"
-                  className="w-full py-3.5 font-medium text-sm rounded-sm transition-all hover:opacity-90"
-                  style={{ backgroundColor: "var(--brand)", color: "var(--white)" }}>
-                  Envoyer le message →
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
