@@ -1,6 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CtaSection from "@/components/home/CtaSection";
+import FaqSection from "@/components/shared/FaqSection";
+import MiniTestimonials from "@/components/shared/MiniTestimonials";
 import Link from "next/link";
 
 const SERVICES = [
@@ -10,6 +12,26 @@ const SERVICES = [
   { icon: "📱", title: "Social Media", desc: "Community management, création de contenu, calendrier éditorial. Présence cohérente sur les réseaux pertinents pour votre audience." },
   { icon: "📧", title: "Email Marketing", desc: "Newsletters, séquences automation, nurturing leads. Des messages qui arrivent au bon moment, à la bonne personne." },
   { icon: "📊", title: "Analytics & Reporting", desc: "Tableaux de bord personnalisés, attribution multi-touch, optimisation continue. Chaque euro dépensé est tracé et justifié." },
+];
+
+const PROCESS = [
+  { num: "01", title: "Audit de présence", desc: "Analyse SEO technique, audit des comptes publicitaires existants, benchmark concurrentiel. On part de ce qui existe pour construire dessus." },
+  { num: "02", title: "Stratégie & plan d'action", desc: "Ciblage audience, sélection des canaux, objectifs SMART et KPIs. Un plan sur 90 jours, réaliste et mesurable." },
+  { num: "03", title: "Exécution & optimisation", desc: "Création de contenus, lancement des campagnes, A/B testing continu. On optimise chaque semaine en fonction des données." },
+  { num: "04", title: "Reporting & itération", desc: "Rapport mensuel détaillé, call de suivi, ajustements stratégiques. Transparence totale sur ce qui fonctionne et ce qu'on améliore." },
+];
+
+const TESTIMONIALS = [
+  { quote: "En 6 mois de SEO, notre trafic organique a augmenté de 180%. On apparaît maintenant sur des requêtes qu'on n'aurait jamais imaginé atteindre.", author: "Camille R.", role: "CEO", company: "E-commerce mode, France" },
+  { quote: "Les campagnes Google Ads ont divisé notre coût d'acquisition par 2,4 en 3 mois. L'équipe sait exactement quels leviers actionner.", author: "Antoine M.", role: "Directeur Commercial", company: "SaaS B2B, Lyon" },
+  { quote: "On leur a confié notre stratégie social media de A à Z. Notre communauté LinkedIn a triplé en 4 mois avec un engagement qu'on n'avait jamais eu.", author: "Nadia B.", role: "Responsable Marketing", company: "Cabinet conseil, Paris" },
+];
+
+const FAQ = [
+  { q: "En combien de temps voit-on des résultats SEO ?", a: "Le SEO est un investissement long terme. Les premiers résultats mesurables apparaissent en 3 à 4 mois. Un positionnement solide se construit sur 6 à 12 mois. C'est pour ça qu'on combine souvent SEO et campagnes payantes au démarrage." },
+  { q: "Quel budget minimum pour les campagnes Google Ads ?", a: "On recommande un minimum de 500€/mois de budget publicitaire pour avoir des données significatives. Nos honoraires de gestion viennent en sus. En dessous, l'optimisation est difficile et les résultats peu représentatifs." },
+  { q: "Travaillez-vous sur des marchés en dehors de la France ?", a: "Oui — France, Belgique, Suisse, Afrique francophone, Madagascar. Notre expertise SEO couvre les marchés francophones. Nos équipes bilingues couvrent aussi les marchés anglophones." },
+  { q: "Proposez-vous des contrats sans engagement ?", a: "On propose des missions ponctuelles (audit, stratégie) et des retainers mensuels avec préavis de 30 jours. On ne croit pas aux contrats longue durée imposés — notre rétention vient de nos résultats." },
 ];
 
 export default function MarketingPage() {
@@ -62,6 +84,28 @@ export default function MarketingPage() {
         </div>
       </section>
 
+      {/* Process */}
+      <section className="py-24 px-6" style={{ backgroundColor: "var(--white)" }}>
+        <div className="max-w-7xl mx-auto">
+          <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOTRE APPROCHE</p>
+          <h2 className="font-display text-4xl md:text-5xl mb-16" style={{ color: "var(--ink)" }}>
+            De l'audit aux résultats.
+          </h2>
+          <div className="grid md:grid-cols-4 gap-px bg-black/8">
+            {PROCESS.map((p, i) => (
+              <div key={i} className="p-8" style={{ backgroundColor: "var(--white)" }}>
+                <div className="font-display text-5xl mb-6 opacity-15" style={{ color: "var(--brand)", lineHeight: 1 }}>{p.num}</div>
+                <div className="w-8 h-0.5 mb-5" style={{ backgroundColor: "var(--brand)" }} />
+                <h3 className="font-display text-lg mb-3" style={{ color: "var(--ink)" }}>{p.title}</h3>
+                <p className="text-sm font-light leading-relaxed" style={{ color: "var(--mid)" }}>{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <MiniTestimonials items={TESTIMONIALS} />
+      <FaqSection items={FAQ} />
       <CtaSection />
       <Footer />
     </main>

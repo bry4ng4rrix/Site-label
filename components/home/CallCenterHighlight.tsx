@@ -42,11 +42,8 @@ const STATUS_COLORS: Record<AgentStatus, string> = {
 
 export default function CallCenterHighlight() {
   const [agents, setAgents] = useState<Agent[]>(INITIAL_AGENTS);
-  const [tick, setTick] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setTick(t => t + 1);
       setAgents(prev =>
         prev.map(agent => {
           if (Math.random() < 0.12) {
@@ -124,7 +121,7 @@ export default function CallCenterHighlight() {
             {/* Stats bar */}
             <div
               className="grid grid-cols-3 divide-x text-center py-3"
-              style={{ divideColor: "rgba(255,255,255,0.06)" }}
+              style={{ borderColor: "rgba(255,255,255,0.06)" }}
             >
               <div>
                 <div className="font-display text-xl text-green-400">{enAppel}</div>
