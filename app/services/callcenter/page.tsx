@@ -95,8 +95,8 @@ export default function CallCenterPage() {
           </div>
           <div className="hidden lg:block relative" style={{ minHeight: "70vh" }}>
             <Image
-              src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=900&h=700&fit=crop&q=80"
-              alt="Call center bilingue FR/EN"
+              src="/images/callcenter-fetra.png"
+              alt="Call center Label Technology — Antananarivo"
               fill
               className="object-cover"
               style={{ opacity: 0.45 }}

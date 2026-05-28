@@ -77,15 +77,15 @@ export default function DigitalPage() {
               </Link>
             </div>
           </div>
-          <div className="hidden lg:block relative" style={{ minHeight: "70vh" }}>
+          <div className="hidden lg:flex items-center justify-center py-8">
             <Image
-              src="https://images.unsplash.com/photo-1553484771-047a44eee27a?w=900&h=700&fit=crop&q=80"
-              alt="Digitalisation et ERP"
-              fill
-              className="object-cover"
-              style={{ opacity: 0.45 }}
+              src="/images/digitalisation.png"
+              alt="Digitalisation et ERP — Label Technology"
+              width={1330}
+              height={1408}
+              className="w-full h-auto rounded-sm"
+              style={{ opacity: 0.9 }}
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, var(--ink) 0%, transparent 55%)" }} />
           </div>
         </div>
       </section>
