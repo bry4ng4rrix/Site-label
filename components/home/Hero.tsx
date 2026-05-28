@@ -31,10 +31,14 @@ export default function Hero() {
           <span style={{ color: "var(--brand-lt)" }}>de votre croissance.</span>
         </h1>
 
-        <p className="text-white/70 text-lg max-w-2xl leading-relaxed mb-10 animate-fadeup-d2" style={{ lineHeight: 1.8 }}>
+        <p className="text-white/70 text-lg max-w-2xl leading-relaxed mb-5 animate-fadeup-d2" style={{ lineHeight: 1.8 }}>
           Développement web, Call Center 50 postes FR/EN, Marketing digital,
           Digitalisation, Traitement de données, Matériel IT & Comptabilité —
           une seule équipe, sept expertises, des résultats mesurables.
+        </p>
+
+        <p className="text-white/35 text-sm italic mb-10 max-w-2xl animate-fadeup-d2">
+          "Votre vision, notre expertise : l'alliance qui transforme le potentiel en performance."
         </p>
 
         <div className="flex flex-wrap gap-4 mb-20 animate-fadeup-d3">

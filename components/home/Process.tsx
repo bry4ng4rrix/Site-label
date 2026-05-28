@@ -22,7 +22,7 @@ const STEPS = [
   {
     num: "04",
     title: "On reste.",
-    desc: "Support continu, suivi, itération. Le projet ne s'arrête pas à la livraison. Vous avez un interlocuteur dédié tant que vous en avez besoin.",
+    desc: "La livraison n'est pas la fin de l'histoire — c'est le premier jour de votre accélération. Support continu, itérations, évolutions. Votre interlocuteur reste le même, votre ambition grandit.",
     color: "var(--brand-lt)",
   },
 ];

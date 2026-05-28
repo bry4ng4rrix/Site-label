@@ -148,6 +148,11 @@ export default function DigitalPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-6 p-5" style={{ borderLeft: "3px solid var(--brand)", backgroundColor: "rgba(30,63,171,0.05)" }}>
+              <p className="text-base italic leading-relaxed" style={{ color: "var(--ink)" }}>
+                "Nous n'ajoutons pas un outil à votre quotidien, nous bâtissons les fondations de votre expansion."
+              </p>
+            </div>
           </div>
           <DigitalChart />
         </div>

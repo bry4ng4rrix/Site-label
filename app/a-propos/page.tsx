@@ -40,7 +40,7 @@ const CHIFFRES = [
   { value: "60+", label: "Collaborateurs" },
   { value: "4", label: "Ans d'expérience" },
   { value: "50", label: "Postes Call Center" },
-  { value: "6", label: "Pôles de services" },
+  { value: "7", label: "Pôles de services" },
   { value: "FR/EN", label: "Bilingue certifié" },
   { value: "24h/24", label: "Disponibilité" },
 ];
@@ -61,7 +61,7 @@ export default function AProposPage() {
             Antananarivo.<br />
             <span style={{ color: "var(--brand-lt)" }}>Standards européens.</span>
           </h1>
-          <p className="text-white/60 text-lg font-light leading-relaxed max-w-2xl">
+          <p className="text-white/70 text-lg leading-relaxed max-w-2xl" style={{ lineHeight: 1.8 }}>
             Fondée il y a 4 ans à Madagascar, Label Technology est aujourd'hui
             un partenaire technologique de référence pour les entreprises
             françaises, africaines et malgaches.
@@ -87,11 +87,14 @@ export default function AProposPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="label-tag mb-4" style={{ color: "var(--brand)" }}>NOTRE HISTOIRE</p>
-              <h2 className="font-display text-4xl md:text-5xl mb-6 leading-tight" style={{ color: "var(--ink)" }}>
+              <h2 className="font-display text-4xl md:text-5xl mb-4 leading-tight" style={{ color: "var(--ink)" }}>
                 Né à Madagascar.<br />
                 <span style={{ color: "var(--brand)" }}>Pensé pour le monde.</span>
               </h2>
-              <div className="space-y-4 text-base font-light leading-relaxed" style={{ color: "var(--mid)" }}>
+              <p className="font-display text-xl mb-6 leading-snug" style={{ color: "var(--brand)" }}>
+                "Notre plus belle réussite n'est pas ce que nous vendons,<br />c'est ce que vous devenez."
+              </p>
+              <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.8 }}>
                 <p>
                   Label Technology a été fondée avec une conviction simple : Madagascar dispose
                   d'un vivier de talents extraordinaire — ingénieux, bilingues, réactifs —
@@ -114,6 +117,25 @@ export default function AProposPage() {
         </div>
       </section>
 
+      {/* Manifeste */}
+      <section className="py-24 px-6" style={{ backgroundColor: "var(--ink)" }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="label-tag mb-8" style={{ color: "var(--brand-lt)" }}>NOTRE ENGAGEMENT</p>
+          <blockquote
+            className="font-display text-white mb-8 leading-relaxed"
+            style={{ fontSize: "clamp(18px, 2.5vw, 28px)", lineHeight: 1.6 }}
+          >
+            "Sur notre marché, tout le monde vend des produits. Nous avons choisi une autre voie.
+            Nous pensons qu'une solution n'a de valeur que si elle est maîtrisée, alignée avec vos
+            objectifs et génératrice de valeur concrète. C'est pourquoi nous ne vendons rien :
+            nous nous associons à votre croissance."
+          </blockquote>
+          <p className="label-tag text-[10px]" style={{ color: "rgba(255,255,255,0.25)" }}>
+            — Label Technology · Notre engagement depuis 2022
+          </p>
+        </div>
+      </section>
+
       {/* Valeurs */}
       <section className="py-24 px-6" style={{ backgroundColor: "var(--white)" }}>
         <div className="max-w-7xl mx-auto">
@@ -126,7 +148,7 @@ export default function AProposPage() {
               <div key={i} className="p-8" style={{ backgroundColor: "var(--white)" }}>
                 <p className="font-display text-5xl mb-4" style={{ color: "rgba(30,63,171,0.12)" }}>{v.num}</p>
                 <h3 className="font-display text-2xl mb-3" style={{ color: "var(--ink)" }}>{v.title}</h3>
-                <p className="text-sm font-light leading-relaxed" style={{ color: "var(--mid)" }}>{v.desc}</p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.7 }}>{v.desc}</p>
               </div>
             ))}
           </div>
@@ -140,8 +162,8 @@ export default function AProposPage() {
           <h2 className="font-display text-4xl md:text-5xl mb-4" style={{ color: "var(--ink)" }}>
             Les gens derrière le travail.
           </h2>
-          <p className="text-base font-light mb-16 max-w-xl" style={{ color: "var(--mid)" }}>
-            6 pôles, 6 responsables, 60 collaborateurs. Une équipe construite sur la durée.
+          <p className="text-[15px] mb-16 max-w-xl" style={{ color: "#374151" }}>
+            7 pôles, 7 responsables, 60 collaborateurs. Une équipe construite sur la durée.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {EQUIPE.map((m, i) => (
@@ -156,7 +178,7 @@ export default function AProposPage() {
                 />
                 <h3 className="font-display text-lg mb-0.5" style={{ color: "var(--ink)" }}>{m.nom}</h3>
                 <p className="label-tag text-[10px] mb-3" style={{ color: "var(--brand)" }}>{m.role}</p>
-                <p className="text-sm font-light leading-relaxed" style={{ color: "var(--mid)" }}>{m.desc}</p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.7 }}>{m.desc}</p>
               </div>
             ))}
           </div>

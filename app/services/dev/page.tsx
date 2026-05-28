@@ -156,6 +156,11 @@ export default function DevPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-6 p-5 rounded-sm" style={{ backgroundColor: "rgba(255,255,255,0.04)", borderLeft: "3px solid var(--brand-lt)" }}>
+              <p className="text-white/70 text-sm italic leading-relaxed">
+                "Parce qu'une technologie sans accompagnement n'est qu'un coût. Nous en faisons un levier."
+              </p>
+            </div>
           </div>
           <DevChart />
         </div>

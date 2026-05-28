@@ -9,12 +9,16 @@ export default function CtaSection() {
         <p className="label-tag text-white/60 mb-6">PRÊT À DÉMARRER ?</p>
 
         <h2
-          className="font-display text-white mb-6"
+          className="font-display text-white mb-5"
           style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: 1.0 }}
         >
           Votre projet mérite mieux
           qu'une agence généraliste.
         </h2>
+
+        <p className="text-white/80 text-xl italic mb-8 font-display">
+          Quittez la posture d'acheteur. Prenez la place de partenaire.
+        </p>
 
         <p className="text-white/70 font-light text-lg max-w-xl mx-auto mb-12 leading-relaxed">
           Décrivez-nous votre besoin. On vous répond sous 24h avec une
