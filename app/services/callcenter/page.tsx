@@ -75,12 +75,11 @@ export default function CallCenterPage() {
             <p className="label-tag mb-5" style={{ color: "var(--gold)" }}>CALL CENTER · 50 POSTES · ANTANANARIVO</p>
             <h1 className="font-display text-white mb-6 leading-tight" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
               50 voix.<br />
-              <span style={{ color: "var(--gold)" }}>Votre marque</span><br />
-              en France.
+              <span style={{ color: "var(--gold)" }}>Votre support permanent.</span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl" style={{ lineHeight: 1.8 }}>
               Prospection B2B, qualification de fichiers, support client bilingue FR/EN.
-              Depuis Antananarivo, avec l'exigence d'un partenaire européen.
+              Une équipe dédiée, disponible 24h/24 — opérationnelle en moins de 2h.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact"

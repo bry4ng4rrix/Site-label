@@ -4,7 +4,7 @@ const STATS = [
   { value: "50",    label: "postes Call Center" },
   { value: "7",     label: "domaines d'expertise" },
   { value: "FR/EN", label: "bilingue certifié" },
-  { value: "24h",   label: "délai de réponse" },
+  { value: "72h",   label: "délai de réponse" },
 ];
 
 export default function Hero() {

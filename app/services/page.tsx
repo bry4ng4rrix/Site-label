@@ -35,7 +35,7 @@ const SERVICES = [
     tag: "DIGITALISATION",
     href: "/services/digital",
     title: "Logiciels de Gestion",
-    accroche: "Vos processus méritent mieux qu'Excel.",
+    accroche: "Vos processus méritent mieux.",
     desc: "ERP, SIRH, GED, logiciels métier sur mesure. Odoo, SAP, solutions custom. Formation et conduite du changement incluses.",
     items: ["ERP & Odoo", "SIRH & Paie", "Gestion documentaire", "Logiciels métier", "Intégrations APIs"],
     featured: false,
@@ -58,6 +58,15 @@ const SERVICES = [
     items: ["PC & Workstations", "Réseau & WiFi", "Impression & Scan", "Onduleurs & Sauvegarde", "Maintenance IT"],
     featured: false,
   },
+  {
+    tag: "COMPTABILITÉ",
+    href: "/services/comptabilite",
+    title: "Comptabilité & Reporting",
+    accroche: "Vos chiffres, enfin lisibles.",
+    desc: "Saisie comptable, rapprochements bancaires, reporting mensuel et tableaux de bord. Disponible avant le 5 du mois.",
+    items: ["Saisie comptable", "Rapprochements bancaires", "Reporting mensuel", "Tableaux de bord dirigeants", "Archivage RGPD"],
+    featured: false,
+  },
 ];
 
 export default function ServicesPage() {
@@ -73,11 +82,11 @@ export default function ServicesPage() {
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="label-tag mb-5" style={{ color: "var(--brand-lt)" }}>NOS EXPERTISES</p>
           <h1 className="font-display text-white mb-6 leading-tight" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
-            6 expertises.<br />
+            7 expertises.<br />
             <span style={{ color: "var(--brand-lt)" }}>1 équipe.</span>
           </h1>
           <p className="text-white/60 text-lg font-light leading-relaxed max-w-2xl">
-            Développement, Call Center, Marketing, Digitalisation, Données, Matériel.
+            Développement, Call Center, Marketing, Digitalisation, Données, Matériel, Comptabilité.
             Une couverture complète depuis Antananarivo.
           </p>
         </div>
@@ -136,7 +145,7 @@ export default function ServicesPage() {
             { v: "60+", l: "Collaborateurs" },
             { v: "4 ans", l: "D'expérience" },
             { v: "FR/EN", l: "Bilingue certifié" },
-            { v: "<24h", l: "Délai de réponse" },
+            { v: "<72h", l: "Délai de réponse" },
           ].map((m, i) => (
             <div key={i} className="text-center py-8">
               <div className="font-display text-3xl text-white mb-1">{m.v}</div>

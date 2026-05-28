@@ -12,14 +12,14 @@ const MarketingChart = dynamic(() => import("@/components/services/MarketingChar
 
 export const metadata: Metadata = {
   title: "Marketing Digital — SEO, Google Ads, Social Media | Label Technology",
-  description: "Stratégie digitale, SEO, publicité payante, social media, email marketing. Résultats mesurables depuis Antananarivo. Audit gratuit en 24h.",
+  description: "Stratégie digitale, SEO, publicité payante, social media, email marketing. Résultats mesurables depuis Antananarivo. Audit gratuit en 72h.",
 };
 
 const METRICS = [
   { v: "+180%", l: "trafic SEO moyen" },
   { v: "×2.4", l: "amélioration CPA" },
   { v: "6 mois", l: "résultats durables" },
-  { v: "FR/EU/MG", l: "marchés couverts" },
+  { v: "MG/AF/EU", l: "marchés couverts" },
 ];
 
 const SERVICES = [

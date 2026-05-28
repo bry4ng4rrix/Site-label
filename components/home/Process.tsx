@@ -3,25 +3,25 @@
 const STEPS = [
   {
     num: "01",
-    title: "On écoute d'abord.",
+    title: "Écoute",
     desc: "Cadrage précis de vos enjeux avant toute proposition. On comprend votre métier, vos contraintes et vos objectifs avant de suggérer quoi que ce soit.",
     color: "var(--brand)",
   },
   {
     num: "02",
-    title: "On conçoit ensemble.",
+    title: "Conception",
     desc: "Pas de boîte noire. Chaque étape est validée avec vous. La solution vous appartient avant même d'être développée — vous ne découvrez pas le résultat à la livraison.",
     color: "var(--gold)",
   },
   {
     num: "03",
-    title: "On exécute. Vraiment.",
+    title: "Exécution",
     desc: "Délais tenus, budget respecté, livrables concrets et mesurables. Notre réputation se construit livraison après livraison — pas sur des promesses en avant-vente.",
     color: "var(--coral)",
   },
   {
     num: "04",
-    title: "On reste.",
+    title: "Suivi",
     desc: "La livraison n'est pas la fin de l'histoire — c'est le premier jour de votre accélération. Support continu, itérations, évolutions. Votre interlocuteur reste le même, votre ambition grandit.",
     color: "var(--brand-lt)",
   },

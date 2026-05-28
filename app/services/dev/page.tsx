@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
@@ -12,14 +12,14 @@ const DevChart = dynamic(() => import("@/components/services/DevChart"), { ssr: 
 
 export const metadata: Metadata = {
   title: "Développement Web & Mobile — Next.js, React, Node.js",
-  description: "Sites web, applications mobiles, APIs, e-commerce. Stack Next.js/React/Node.js. Standards ESN européenne, délais startup. Devis gratuit en 24h depuis Antananarivo.",
+  description: "Sites web, applications mobiles, APIs, e-commerce. Stack Next.js/React/Node.js. Standards ESN européenne, délais startup. Devis gratuit en 72h depuis Antananarivo.",
 };
 
 const METRICS = [
   { v: "800€", l: "projet à partir de" },
   { v: "3–6 sem.", l: "délai site vitrine" },
   { v: "99%", l: "satisfaction client" },
-  { v: "24h", l: "devis gratuit" },
+  { v: "72h", l: "devis gratuit" },
 ];
 
 const SERVICES = [
@@ -50,7 +50,7 @@ const FAQ = [
   { q: "Quels sont vos délais typiques pour un projet web ?", a: "Un site vitrine : 3 à 6 semaines. Une application web complète : 2 à 6 mois selon la complexité. On établit un planning détaillé lors du cadrage — et on le respecte." },
   { q: "Travaillez-vous avec des technologies spécifiques ou s'adaptez-vous ?", a: "On maîtrise Next.js, React, Node.js, PostgreSQL, React Native. On peut s'adapter à votre stack existante si nécessaire. On choisit toujours la technologie la plus adaptée à votre usage." },
   { q: "Comment se déroule la collaboration à distance ?", a: "Daily standup optionnel, démos hebdomadaires, Slack dédié. On est sur UTC+3 — 2h de décalage avec Paris en été. En pratique : nos clients oublient souvent qu'on est à Madagascar." },
-  { q: "Proposez-vous de la maintenance après livraison ?", a: "Oui, sous forme de contrat mensuel ou de tickets à la demande. Réponse garantie sous 4h pour les bugs critiques, 24h pour les demandes standard." },
+  { q: "Proposez-vous de la maintenance après livraison ?", a: "Oui, sous forme de contrat mensuel ou de tickets à la demande. Réponse garantie sous 24h pour les bugs critiques, 48h pour les demandes standard." },
   { q: "Quel est le budget minimum pour un projet de développement ?", a: "Un site vitrine à partir de 800€. Une application web sur mesure entre 3 000€ et 15 000€. On établit un devis précis après le premier échange — gratuit et sans engagement." },
 ];
 
@@ -70,7 +70,7 @@ export default function DevPage() {
             </h1>
             <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl" style={{ lineHeight: 1.8 }}>
               Web, mobile, API, e-commerce. Depuis Antananarivo, avec les standards
-              d'une ESN européenne et les délais d'une startup. Devis gratuit en 24h.
+              d'une ESN européenne et les délais d'une startup. Devis gratuit en 72h.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact"

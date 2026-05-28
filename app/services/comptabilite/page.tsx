@@ -77,7 +77,7 @@ export default function ComptabilitePage() {
           </div>
           <div className="hidden lg:block relative" style={{ minHeight: "70vh" }}>
             <Image
-              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&h=700&fit=crop&q=80"
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&h=700&fit=crop&q=80"
               alt="Comptabilité et reporting financier"
               fill
               className="object-cover"

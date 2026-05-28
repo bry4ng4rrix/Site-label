@@ -19,7 +19,7 @@ const SERVICES = [
     href: "/services/callcenter",
     tag: "Call Center",
     headline: "50 voix.",
-    headlineAccent: "Votre marque en France.",
+    headlineAccent: "Votre support permanent.",
     desc: "Prospection B2B, qualification de fichiers, support client bilingue FR/EN depuis Antananarivo.",
     items: ["Prospection B2B", "Qualification de fichiers", "Support entrant & sortant", "Reporting temps réel"],
     featured: false,

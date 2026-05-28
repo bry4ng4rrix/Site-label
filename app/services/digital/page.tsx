@@ -63,7 +63,7 @@ export default function DigitalPage() {
             <p className="label-tag mb-5" style={{ color: "var(--brand-lt)" }}>DIGITALISATION & LOGICIELS DE GESTION</p>
             <h1 className="font-display text-white mb-6 leading-tight" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
               Vos processus méritent<br />
-              <span style={{ color: "var(--brand-lt)" }}>mieux qu'Excel.</span>
+              <span style={{ color: "var(--brand-lt)" }}>mieux.</span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl" style={{ lineHeight: 1.8 }}>
               ERP, SIRH, GED, logiciels métier sur mesure. On transforme vos processus

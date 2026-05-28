@@ -6,7 +6,7 @@ import ContactForm from "@/components/contact/ContactForm";
 export const metadata: Metadata = {
   title: "Contact — Démarrez votre projet avec Label Technology",
   description:
-    "Contactez Label Technology pour démarrer votre projet. Développement web, call center, marketing digital, ERP. Réponse sous 24h. Antananarivo, Madagascar.",
+    "Contactez Label Technology pour démarrer votre projet. Développement web, call center, marketing digital, ERP. Réponse sous 72h. Antananarivo, Madagascar.",
 };
 
 export default function ContactPage() {
@@ -25,7 +25,7 @@ export default function ContactPage() {
                 Parlons de<br />votre projet.
               </h1>
               <p className="text-base font-light leading-relaxed mb-12" style={{ color: "var(--mid)" }}>
-                Décrivez-nous votre besoin. Un expert vous répond sous 24h avec
+                Décrivez-nous votre besoin. Un expert vous répond sous 72h avec
                 une proposition concrète — pas un formulaire générique.
               </p>
 

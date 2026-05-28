@@ -21,7 +21,7 @@ export default function CtaSection() {
         </p>
 
         <p className="text-white/70 font-light text-lg max-w-xl mx-auto mb-12 leading-relaxed">
-          Décrivez-nous votre besoin. On vous répond sous 24h avec une
+          Décrivez-nous votre besoin. On vous répond sous 72h avec une
           proposition concrète — pas un formulaire de plus.
         </p>
 
@@ -44,7 +44,7 @@ export default function CtaSection() {
         {/* Réassurance */}
         <div className="mt-14 flex flex-wrap justify-center gap-8">
           {[
-            "Réponse sous 24h garantie",
+            "Réponse sous 72h garantie",
             "Devis gratuit et sans engagement",
             "Interlocuteur dédié dès le premier échange",
           ].map((item, i) => (

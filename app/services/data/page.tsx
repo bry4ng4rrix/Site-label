@@ -12,7 +12,7 @@ const DataChart = dynamic(() => import("@/components/services/DataChart"), { ssr
 
 export const metadata: Metadata = {
   title: "Traitement de Données — Saisie, Nettoyage, Analyse | Label Technology",
-  description: "Saisie de données, nettoyage, normalisation, analyse et datavisualisation. Précision garantie à 99,5%. Depuis Antananarivo, pour clients FR/EU/MG.",
+  description: "Saisie de données, nettoyage, normalisation, analyse et datavisualisation. Précision garantie à 99,5%. Depuis Antananarivo, pour clients MG/AF/EU.",
 };
 
 const METRICS = [
