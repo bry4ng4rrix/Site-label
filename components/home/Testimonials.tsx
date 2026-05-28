@@ -4,28 +4,28 @@ import Image from "next/image";
 
 const TESTIMONIALS = [
   {
-    quote: "On cherchait un call center sérieux pour la France. On a trouvé une équipe qui parle mieux notre marché que certains de nos propres commerciaux.",
-    author: "Directeur commercial",
-    company: "PME industrielle",
-    location: "Lyon, France",
+    quote: "On cherchait un call center francophone fiable pour nos campagnes B2B en France. On a trouvé une équipe qui comprend nos prospects mieux que certains de nos propres commerciaux. Taux de prise de RDV en hausse de 40% dès le deuxième mois.",
+    author: "François B.",
+    role: "Directeur Commercial",
+    company: "PME industrielle, Lyon",
     tag: "Call Center",
     color: "var(--gold)",
     avatar: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=80&h=80&fit=crop&q=80",
   },
   {
-    quote: "Label Technology nous a livré notre application en 6 semaines, dans les délais et le budget. Le suivi post-livraison est exemplaire. On repart pour un deuxième projet.",
-    author: "Directeur général",
-    company: "Entreprise de services",
-    location: "Antananarivo, Madagascar",
+    quote: "Livraison en 6 semaines, dans les délais et dans le budget. Le code est propre, la documentation complète. On a déjà démarré un deuxième projet — cette fois plus ambitieux.",
+    author: "Hery R.",
+    role: "Directeur Général",
+    company: "Groupe éducatif, Antananarivo",
     tag: "Développement Web",
     color: "var(--brand)",
     avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&q=80",
   },
   {
-    quote: "La numérisation de nos archives s'est faite sans interruption de service. 80 000 documents traités en trois mois. Sérieux, discrets, et d'une précision remarquable.",
-    author: "Directrice des systèmes d'information",
-    company: "Institution publique",
-    location: "Madagascar",
+    quote: "80 000 documents numérisés en trois mois, zéro interruption de service. Chaque fichier est indexé, searchable, conforme RGPD. Label Technology a transformé une contrainte en vrai avantage opérationnel.",
+    author: "Isabelle M.",
+    role: "Directrice des Systèmes d'Information",
+    company: "Institution publique, Madagascar",
     tag: "Traitement de données",
     color: "var(--brand-lt)",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&q=80",
@@ -37,9 +37,10 @@ export default function Testimonials() {
     <section className="py-24 px-6" style={{ backgroundColor: "var(--paper)" }}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-14">
-          <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>TÉMOIGNAGES</p>
+          <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>TÉMOIGNAGES CLIENTS</p>
           <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--ink)" }}>
-            Ils nous font confiance.
+            Des résultats,<br />
+            <span style={{ color: "var(--brand)" }}>pas des promesses.</span>
           </h2>
         </div>
 
@@ -83,8 +84,8 @@ export default function Testimonials() {
                   <div className="font-medium text-sm mb-0.5" style={{ color: "var(--ink)" }}>
                     {t.author}
                   </div>
-                  <div className="text-xs" style={{ color: "var(--mid)" }}>
-                    {t.company} · {t.location}
+                  <div className="text-xs" style={{ color: "#6B7280" }}>
+                    {t.role} · {t.company}
                   </div>
                 </div>
               </div>

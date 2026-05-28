@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const STATS = [
   { value: "50",    label: "postes Call Center" },
-  { value: "6",     label: "domaines d'expertise" },
-  { value: "FR/EN", label: "bilingue" },
+  { value: "7",     label: "domaines d'expertise" },
+  { value: "FR/EN", label: "bilingue certifié" },
   { value: "24h",   label: "délai de réponse" },
 ];
 
@@ -27,29 +27,29 @@ export default function Hero() {
           className="font-display text-white mb-6 max-w-4xl animate-fadeup-d1"
           style={{ fontSize: "clamp(42px, 7vw, 88px)" }}
         >
-          Votre partenaire{" "}
-          <span style={{ color: "var(--brand-lt)" }}>technologique</span>{" "}
-          premium
+          La technologie au service{" "}
+          <span style={{ color: "var(--brand-lt)" }}>de votre croissance.</span>
         </h1>
 
-        <p className="text-white/60 text-lg max-w-2xl leading-relaxed mb-10 font-light animate-fadeup-d2">
-          Développement, Call Center 50 postes, Marketing digital, Digitalisation,
-          Data et Matériel IT — une seule équipe, six expertises.
+        <p className="text-white/70 text-lg max-w-2xl leading-relaxed mb-10 animate-fadeup-d2" style={{ lineHeight: 1.8 }}>
+          Développement web, Call Center 50 postes FR/EN, Marketing digital,
+          Digitalisation, Traitement de données, Matériel IT & Comptabilité —
+          une seule équipe, sept expertises, des résultats mesurables.
         </p>
 
         <div className="flex flex-wrap gap-4 mb-20 animate-fadeup-d3">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 text-white font-medium rounded-sm transition-all hover:opacity-90 active:scale-95"
-            style={{ backgroundColor: "var(--brand)" }}
+            className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold rounded-sm transition-all hover:opacity-90 active:scale-95"
+            style={{ backgroundColor: "var(--coral)" }}
           >
             Démarrer un projet →
           </Link>
           <Link
-            href="/services"
+            href="/services/callcenter"
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-light rounded-sm border border-white/20 hover:border-white/50 transition-colors"
           >
-            Découvrir nos services
+            Call Center 50 postes
           </Link>
         </div>
 

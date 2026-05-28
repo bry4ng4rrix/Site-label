@@ -65,10 +65,21 @@ const SERVICES = [
     tag: "Matériel IT",
     headline: "L'infrastructure",
     headlineAccent: "qui tient la route.",
-    desc: "Ordinateurs, serveurs, réseau, périphériques. Conseil, livraison et installation B2B.",
+    desc: "Ordinateurs, serveurs, réseau, périphériques. Conseil, livraison et installation B2B sur Antananarivo et régions.",
     items: ["Postes de travail & laptops", "Serveurs & NAS", "Réseau (Cisco, Ubiquiti)", "Installation & support"],
     featured: false,
-    color: "var(--mid)",
+    color: "var(--brand)",
+  },
+  {
+    id: "comptabilite",
+    href: "/services/comptabilite",
+    tag: "Comptabilité",
+    headline: "Vos chiffres,",
+    headlineAccent: "enfin lisibles.",
+    desc: "Saisie comptable, rapprochements bancaires, reporting financier mensuel. Des décisions éclairées, fondées sur des données fiables.",
+    items: ["Saisie comptable & TVA", "Rapprochements bancaires", "Reporting mensuel", "Tableaux de bord dirigeants"],
+    featured: false,
+    color: "var(--brand-lt)",
   },
 ];
 
@@ -81,7 +92,7 @@ export default function ServicesGrid() {
           <div>
             <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOS EXPERTISES</p>
             <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--ink)" }}>
-              6 expertises.<br />
+              7 expertises.<br />
               <span style={{ color: "var(--brand)" }}>1 équipe.</span>
             </h2>
           </div>
@@ -140,8 +151,8 @@ export default function ServicesGrid() {
 
               {/* Description */}
               <p
-                className="text-sm leading-relaxed mb-6 font-light"
-                style={{ color: s.featured ? "rgba(255,255,255,0.5)" : "var(--mid)" }}
+                className="text-[15px] leading-relaxed mb-6"
+                style={{ color: s.featured ? "rgba(255,255,255,0.65)" : "#374151", lineHeight: 1.7 }}
               >
                 {s.desc}
               </p>
@@ -151,8 +162,8 @@ export default function ServicesGrid() {
                 {s.items.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-center gap-2 text-xs"
-                    style={{ color: s.featured ? "rgba(255,255,255,0.6)" : "var(--mid)" }}
+                    className="flex items-center gap-2 text-sm"
+                    style={{ color: s.featured ? "rgba(255,255,255,0.6)" : "#4B5563" }}
                   >
                     <span style={{ color: s.color }}>→</span>
                     {item}

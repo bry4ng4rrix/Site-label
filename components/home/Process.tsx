@@ -4,25 +4,25 @@ const STEPS = [
   {
     num: "01",
     title: "On écoute d'abord.",
-    desc: "Cadrage précis de vos enjeux avant toute proposition. Pas de solution standard avant d'avoir compris votre réalité.",
+    desc: "Cadrage précis de vos enjeux avant toute proposition. On comprend votre métier, vos contraintes et vos objectifs avant de suggérer quoi que ce soit.",
     color: "var(--brand)",
   },
   {
     num: "02",
     title: "On conçoit ensemble.",
-    desc: "Pas de boîte noire. Chaque étape est validée avec vous. La solution vous appartient avant même d'être développée.",
+    desc: "Pas de boîte noire. Chaque étape est validée avec vous. La solution vous appartient avant même d'être développée — vous ne découvrez pas le résultat à la livraison.",
     color: "var(--gold)",
   },
   {
     num: "03",
     title: "On exécute. Vraiment.",
-    desc: "Délais tenus. Budget respecté. Livrables concrets et mesurables. Notre réputation se construit livraison après livraison.",
+    desc: "Délais tenus, budget respecté, livrables concrets et mesurables. Notre réputation se construit livraison après livraison — pas sur des promesses en avant-vente.",
     color: "var(--coral)",
   },
   {
     num: "04",
     title: "On reste.",
-    desc: "Support continu, suivi, itération. Le projet ne s'arrête pas à la livraison. Nous restons votre partenaire dans la durée.",
+    desc: "Support continu, suivi, itération. Le projet ne s'arrête pas à la livraison. Vous avez un interlocuteur dédié tant que vous en avez besoin.",
     color: "var(--brand-lt)",
   },
 ];
@@ -69,8 +69,8 @@ export default function Process() {
 
               {/* Description */}
               <p
-                className="text-sm leading-relaxed font-light"
-                style={{ color: "var(--mid)" }}
+                className="text-[15px] leading-relaxed"
+                style={{ color: "#374151", lineHeight: 1.7 }}
               >
                 {step.desc}
               </p>
