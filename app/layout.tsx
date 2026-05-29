@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "geist/font";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({
+const geist = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-inter",
-  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -74,12 +78,18 @@ export default function RootLayout({
   return (
     <html 
       lang="fr" 
+      suppressHydrationWarning
       className={cn(
-        "scroll-smooth bg-white",
-        inter.variable
+        "scroll-smooth",
+        geist.variable,
+        geistMono.variable
       )}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-50 transition-colors">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
