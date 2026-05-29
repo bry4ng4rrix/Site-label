@@ -11,8 +11,8 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full py-3.5 font-medium text-sm rounded-sm transition-all hover:opacity-90 disabled:opacity-50"
-      style={{ backgroundColor: "var(--brand)", color: "var(--white)" }}>
+      className="w-full py-3.5 font-semibold text-sm rounded-lg transition-all hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-50"
+      style={{ backgroundColor: "var(--brand)", color: "white" }}>
       {pending ? "Envoi en cours..." : "Envoyer le message →"}
     </button>
   );
@@ -23,13 +23,12 @@ export default function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div className="p-8 rounded-sm border text-center"
-        style={{ backgroundColor: "rgba(30,63,171,0.04)", borderColor: "var(--brand)" }}>
-        <div className="text-4xl mb-4">✓</div>
-        <h2 className="font-display text-2xl mb-3" style={{ color: "var(--ink)" }}>
+      <div className="p-8 rounded-lg border-2 text-center bg-green-50 border-green-300">
+        <div className="text-5xl mb-4">✓</div>
+        <h2 className="font-display text-2xl mb-3 text-gray-900">
           Message envoyé.
         </h2>
-        <p className="text-sm font-light" style={{ color: "var(--mid)" }}>
+        <p className="text-sm text-gray-700">
           {state.message}
         </p>
       </div>
@@ -37,11 +36,11 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="p-8 rounded-sm border" style={{ backgroundColor: "var(--white)", borderColor: "rgba(0,0,0,0.08)" }}>
-      <h2 className="font-display text-2xl mb-6" style={{ color: "var(--ink)" }}>Envoyer un message</h2>
+    <div className="p-8 rounded-lg border border-gray-200 bg-white">
+      <h2 className="font-display text-2xl mb-6 text-gray-900">Envoyer un message</h2>
 
       {state.status === "error" && (
-        <div className="mb-5 p-3 rounded-sm text-sm" style={{ backgroundColor: "rgba(255,77,109,0.08)", color: "#dc2626" }}>
+        <div className="mb-5 p-4 rounded-lg text-sm bg-red-50 text-red-700 border border-red-200">
           {state.message}
         </div>
       )}
@@ -49,29 +48,25 @@ export default function ContactForm() {
       <form action={action} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
-            <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>PRÉNOM & NOM *</label>
+            <label className="label-tag text-[10px] block mb-2 text-gray-700">PRÉNOM & NOM *</label>
             <input required type="text" name="name" placeholder="Jean Dupont"
-              className="w-full px-4 py-3 text-sm border rounded-sm outline-none transition-colors focus:border-[#1E3FAB]"
-              style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }} />
+              className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white text-gray-900" />
           </div>
           <div>
-            <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>ENTREPRISE</label>
+            <label className="label-tag text-[10px] block mb-2 text-gray-700">ENTREPRISE</label>
             <input type="text" name="company" placeholder="Votre société"
-              className="w-full px-4 py-3 text-sm border rounded-sm outline-none transition-colors"
-              style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }} />
+              className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white text-gray-900" />
           </div>
         </div>
         <div>
-          <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>EMAIL PROFESSIONNEL *</label>
+          <label className="label-tag text-[10px] block mb-2 text-gray-700">EMAIL PROFESSIONNEL *</label>
           <input required type="email" name="email" placeholder="jean@entreprise.com"
-            className="w-full px-4 py-3 text-sm border rounded-sm outline-none transition-colors"
-            style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }} />
+            className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white text-gray-900" />
         </div>
         <div>
-          <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>SERVICE CONCERNÉ</label>
+          <label className="label-tag text-[10px] block mb-2 text-gray-700">SERVICE CONCERNÉ</label>
           <select name="service"
-            className="w-full px-4 py-3 text-sm border rounded-sm outline-none transition-colors bg-white"
-            style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }}>
+            className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white text-gray-900">
             <option value="">Choisir un service...</option>
             <option value="Call Center">Call Center</option>
             <option value="Développement Web & Mobile">Développement Web & Mobile</option>
@@ -82,10 +77,9 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label className="label-tag text-[10px] block mb-2" style={{ color: "var(--mid)" }}>VOTRE MESSAGE *</label>
+          <label className="label-tag text-[10px] block mb-2 text-gray-700">VOTRE MESSAGE *</label>
           <textarea required name="message" rows={5} placeholder="Décrivez votre projet ou votre besoin..."
-            className="w-full px-4 py-3 text-sm border rounded-sm outline-none transition-colors resize-none"
-            style={{ borderColor: "rgba(0,0,0,0.12)", color: "var(--ink)" }} />
+            className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-100 resize-none bg-white text-gray-900" />
         </div>
         <SubmitButton />
       </form>

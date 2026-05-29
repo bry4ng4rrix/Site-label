@@ -34,57 +34,55 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: "var(--paper)" }}>
+    <section className="py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-14">
-          <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>TÉMOIGNAGES CLIENTS</p>
-          <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--ink)" }}>
+        <div className="mb-16">
+          <p className="label-tag mb-4 text-gray-600">TÉMOIGNAGES CLIENTS</p>
+          <h2 className="font-display text-5xl md:text-6xl text-gray-900" style={{ lineHeight: 1.05 }}>
             Des résultats,<br />
-            <span style={{ color: "var(--brand)" }}>pas des promesses.</span>
+            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, var(--brand), var(--brand-lt))" }}>
+              pas des promesses.
+            </span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black/8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, i) => (
             <div
               key={i}
-              className="p-8 flex flex-col"
-              style={{ backgroundColor: "var(--white)" }}
+              className="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all hover:-translate-y-2 flex flex-col bg-white"
             >
               <span
-                className="label-tag text-[10px] mb-6 self-start px-2 py-1"
-                style={{ backgroundColor: `color-mix(in srgb, ${t.color} 12%, transparent)`, color: t.color }}
+                className="label-tag text-[10px] mb-6 self-start px-3 py-1.5 rounded-md"
+                style={{ backgroundColor: `color-mix(in srgb, ${t.color} 15%, transparent)`, color: t.color }}
               >
                 {t.tag}
               </span>
 
               <div
-                className="font-display text-5xl leading-none mb-4 opacity-20"
+                className="font-display text-4xl leading-none mb-6 opacity-30"
                 style={{ color: t.color }}
               >
                 "
               </div>
 
-              <p
-                className="text-base leading-relaxed font-light mb-8 flex-1"
-                style={{ color: "var(--ink)" }}
-              >
+              <p className="text-base leading-relaxed mb-8 flex-1 text-gray-700">
                 {t.quote}
               </p>
 
-              <div className="border-t pt-5 flex items-center gap-3" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
+              <div className="border-t border-gray-200 pt-6 flex items-center gap-4">
                 <Image
                   src={t.avatar}
                   alt={t.author}
-                  width={40}
-                  height={40}
+                  width={44}
+                  height={44}
                   className="rounded-full object-cover shrink-0"
                 />
                 <div>
-                  <div className="font-medium text-sm mb-0.5" style={{ color: "var(--ink)" }}>
+                  <div className="font-semibold text-sm text-gray-900 mb-1">
                     {t.author}
                   </div>
-                  <div className="text-xs" style={{ color: "#6B7280" }}>
+                  <div className="text-xs text-gray-600">
                     {t.role} · {t.company}
                   </div>
                 </div>

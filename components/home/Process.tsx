@@ -29,56 +29,49 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: "var(--white)" }}>
+    <section className="py-32 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-14">
-          <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOTRE MÉTHODE</p>
-          <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--ink)" }}>
+        <div className="mb-16">
+          <p className="label-tag mb-4 text-gray-600">NOTRE MÉTHODE</p>
+          <h2 className="font-display text-5xl md:text-6xl text-gray-900" style={{ lineHeight: 1.05 }}>
             Comment on travaille.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-black/8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {STEPS.map((step, i) => (
             <div
               key={i}
-              className="relative p-8 group hover:bg-gray-50 transition-colors"
-              style={{ backgroundColor: "var(--white)" }}
+              className="relative p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md hover:bg-white transition-all hover:-translate-y-1 bg-white"
             >
               {/* Number */}
               <div
-                className="font-display text-6xl font-extrabold mb-6 opacity-15 group-hover:opacity-25 transition-opacity"
-                style={{ color: step.color, lineHeight: 1 }}
+                className="font-display text-7xl font-extrabold mb-6 opacity-10 group-hover:opacity-15 transition-opacity"
+                style={{ color: step.color, lineHeight: 0.9 }}
               >
                 {step.num}
               </div>
 
               {/* Color bar */}
               <div
-                className="w-8 h-0.5 mb-5"
+                className="w-10 h-1 mb-6 rounded-full"
                 style={{ backgroundColor: step.color }}
               />
 
               {/* Title */}
-              <h3
-                className="font-display text-xl mb-4"
-                style={{ color: "var(--ink)" }}
-              >
+              <h3 className="font-display text-2xl mb-4 text-gray-900">
                 {step.title}
               </h3>
 
               {/* Description */}
-              <p
-                className="text-[15px] leading-relaxed"
-                style={{ color: "#374151", lineHeight: 1.7 }}
-              >
+              <p className="text-[15px] leading-relaxed text-gray-700" style={{ lineHeight: 1.7 }}>
                 {step.desc}
               </p>
 
               {/* Connector arrow (desktop only) */}
               {i < STEPS.length - 1 && (
                 <div
-                  className="hidden lg:block absolute top-1/2 -right-3 z-10 text-lg -translate-y-1/2"
+                  className="hidden lg:block absolute top-1/2 -right-3 z-10 text-2xl font-bold -translate-y-1/2"
                   style={{ color: step.color }}
                 >
                   →

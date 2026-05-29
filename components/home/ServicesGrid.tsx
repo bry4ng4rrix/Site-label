@@ -85,47 +85,39 @@ const SERVICES = [
 
 export default function ServicesGrid() {
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: "var(--paper)" }}>
+    <section className="py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
-        <div className="flex items-end justify-between mb-14 flex-wrap gap-4">
+        <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
           <div>
-            <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOS EXPERTISES</p>
-            <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--ink)" }}>
+            <p className="label-tag mb-4 text-gray-600">NOS EXPERTISES</p>
+            <h2 className="font-display text-5xl md:text-6xl text-gray-900" style={{ lineHeight: 1.05 }}>
               7 expertises.<br />
-              <span style={{ color: "var(--brand)" }}>1 équipe.</span>
+              <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, var(--brand), var(--brand-lt))" }}>
+                1 équipe.
+              </span>
             </h2>
           </div>
           <Link
             href="/contact"
-            className="label-tag text-xs px-5 py-2.5 border-2 rounded-sm transition-colors hover:text-white"
-            style={{ borderColor: "var(--brand)", color: "var(--brand)" }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = "var(--brand)";
-              (e.currentTarget as HTMLElement).style.color = "#fff";
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
-              (e.currentTarget as HTMLElement).style.color = "var(--brand)";
-            }}
+            className="label-tag text-xs px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all hover:shadow-lg"
           >
             DÉMARRER UN PROJET →
           </Link>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-black/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((s) => (
             <Link
               key={s.id}
               href={s.href}
-              className="group relative flex flex-col p-8 card-hover"
-              style={{ backgroundColor: s.featured ? "var(--ink)" : "var(--white)" }}
+              className="group relative flex flex-col p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all hover:-translate-y-2 bg-white"
             >
               {/* Badge */}
               {s.badge && (
                 <span
-                  className="absolute top-6 right-6 label-tag text-[10px] px-2 py-1"
+                  className="absolute top-6 right-6 label-tag text-[10px] px-2.5 py-1.5 rounded-md"
                   style={{ backgroundColor: "var(--gold)", color: "var(--ink)" }}
                 >
                   {s.badge}
@@ -133,47 +125,34 @@ export default function ServicesGrid() {
               )}
 
               {/* Tag */}
-              <p
-                className="label-tag text-[10px] mb-6"
-                style={{ color: s.featured ? "rgba(255,255,255,0.4)" : "var(--mid)" }}
-              >
+              <p className="label-tag text-[10px] mb-6 text-gray-600">
                 {s.tag}
               </p>
 
               {/* Headline */}
-              <h3
-                className="font-display text-2xl mb-4 leading-tight"
-                style={{ color: s.featured ? "var(--white)" : "var(--ink)" }}
-              >
+              <h3 className="font-display text-2xl md:text-3xl mb-5 leading-tight text-gray-900">
                 {s.headline}{" "}
                 <span style={{ color: s.color }}>{s.headlineAccent}</span>
               </h3>
 
               {/* Description */}
-              <p
-                className="text-[15px] leading-relaxed mb-6"
-                style={{ color: s.featured ? "rgba(255,255,255,0.65)" : "#374151", lineHeight: 1.7 }}
-              >
+              <p className="text-[15px] leading-relaxed mb-8 text-gray-700" style={{ lineHeight: 1.7 }}>
                 {s.desc}
               </p>
 
               {/* Items list */}
-              <ul className="mt-auto space-y-1.5">
+              <ul className="mt-auto space-y-2.5">
                 {s.items.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-2 text-sm"
-                    style={{ color: s.featured ? "rgba(255,255,255,0.6)" : "#4B5563" }}
-                  >
-                    <span style={{ color: s.color }}>→</span>
-                    {item}
+                  <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                    <span style={{ color: s.color }} className="font-bold mt-0.5">→</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
               {/* Hover arrow */}
               <span
-                className="mt-6 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                className="mt-6 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
                 style={{ color: s.color }}
               >
                 En savoir plus →
