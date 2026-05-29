@@ -1,5 +1,4 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+
 const ARTICLES = [
   {
     tag: "CALL CENTER",
@@ -48,7 +47,6 @@ const ARTICLES = [
 export default function BlogPage() {
   return (
     <main>
-      <Navbar />
 
       {/* Hero */}
       <section className="relative min-h-[40vh] flex flex-col justify-center grid-bg px-6 pt-24 pb-12"
@@ -96,7 +94,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

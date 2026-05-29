@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
@@ -12,7 +10,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <Navbar />
 
       <section className="min-h-screen px-6 pt-28 pb-16" style={{ backgroundColor: "var(--paper)" }}>
         <div className="max-w-7xl mx-auto">
@@ -76,8 +73,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

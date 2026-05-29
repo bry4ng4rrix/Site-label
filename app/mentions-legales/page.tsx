@@ -1,10 +1,8 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+
 
 export default function MentionsLegalesPage() {
   return (
     <main>
-      <Navbar />
 
       <section className="px-6 pt-28 pb-24" style={{ backgroundColor: "var(--paper)" }}>
         <div className="max-w-3xl mx-auto">
@@ -81,7 +79,6 @@ export default function MentionsLegalesPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

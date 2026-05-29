@@ -2,6 +2,18 @@
 
 import { useState } from "react";
 
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardAction,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+
 type Projet = {
   tag: string;
   title: string;
@@ -48,14 +60,16 @@ export default function ProjetsList() {
         {/* Filtres */}
         <div className="flex flex-wrap gap-2 mb-12">
           {TAGS.map(tag => (
-            <button
+            <Button
               key={tag}
               onClick={() => setActive(tag)}
-              className="px-4 py-2 text-xs rounded-sm transition-all"
+              size="sm"
+              variant={active === tag ? "default" : "outline"}
+              className="rounded-sm transition-all text-xs"
               style={
                 active === tag
-                  ? { backgroundColor: "var(--brand)", color: "var(--white)" }
-                  : { backgroundColor: "var(--white)", color: "var(--mid)", border: "1px solid rgba(0,0,0,0.12)" }
+                  ? { backgroundColor: "var(--brand)", color: "var(--white)", borderColor: "var(--brand)" }
+                  : { color: "var(--mid)", borderColor: "rgba(0,0,0,0.12)" }
               }
             >
               {tag}
@@ -64,36 +78,45 @@ export default function ProjetsList() {
                   ({PROJETS.filter(p => p.tag === tag).length})
                 </span>
               )}
-            </button>
+            </Button>
           ))}
         </div>
 
         {/* Grille */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((p, i) => (
-            <div key={`${active}-${i}`}
-              className="p-7 border rounded-sm card-hover flex flex-col"
+            <Card key={`${active}-${i}`}
+              className="border rounded-xl hover:scale-[1.03] hover:shadow-lg transition-all duration-300 ease-in-out flex flex-col h-full overflow-hidden"
               style={{ borderColor: "rgba(0,0,0,0.08)", backgroundColor: "var(--white)" }}>
-              <span
-                className="label-tag text-[10px] px-2 py-1 self-start mb-4 rounded-sm"
-                style={{ backgroundColor: TAG_COLORS[p.tag] || "var(--brand)", color: "var(--white)" }}>
-                {p.tag}
-              </span>
-              <h3 className="font-display text-lg mb-3 flex-1 leading-snug" style={{ color: "var(--ink)" }}>
-                {p.title}
-              </h3>
-              <p className="text-sm font-light leading-relaxed mb-6" style={{ color: "var(--mid)" }}>
-                {p.desc}
-              </p>
-              <div className="flex flex-wrap gap-2">
+              <CardHeader className="p-7 pb-4">
+                <CardAction>
+                  <Badge
+                    variant="secondary"
+                    className="label-tag text-[10px] px-2 py-0.5 rounded-sm border-0 font-medium text-white shrink-0"
+                    style={{ backgroundColor: TAG_COLORS[p.tag] || "var(--brand)" }}>
+                    {p.tag}
+                  </Badge>
+                </CardAction>
+                <CardTitle className="font-display text-lg leading-snug font-semibold" style={{ color: "var(--ink)" }}>
+                  {p.title}
+                </CardTitle>
+              </CardHeader>
+              
+              <CardContent className="px-7 pb-4 flex-1">
+                <CardDescription className="text-sm font-light leading-relaxed" style={{ color: "var(--mid)" }}>
+                  {p.desc}
+                </CardDescription>
+              </CardContent>
+              
+              <CardFooter className="px-7 py-5 bg-muted/50 border-t flex flex-wrap gap-2 mt-auto">
                 {p.metrics.map((m, j) => (
-                  <span key={j} className="text-[11px] px-2.5 py-1 rounded-sm"
+                  <Badge key={j} variant="outline" className="text-[11px] px-2.5 py-0.5 rounded-sm border-brand/20 bg-brand/5 font-normal text-brand"
                     style={{ backgroundColor: "rgba(30,63,171,0.06)", color: "var(--brand)" }}>
                     {m}
-                  </span>
+                  </Badge>
                 ))}
-              </div>
-            </div>
+              </CardFooter>
+            </Card>
           ))}
         </div>
 

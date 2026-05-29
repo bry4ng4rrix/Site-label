@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar            from "@/components/layout/Navbar";
-import Footer            from "@/components/layout/Footer";
 import Hero              from "@/components/home/Hero";
 import Ticker            from "@/components/home/Ticker";
 import ServicesGrid      from "@/components/home/ServicesGrid";
@@ -46,7 +44,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Navbar />
       <Hero />
       <Ticker />
       <ServicesGrid />
@@ -54,7 +51,6 @@ export default function Home() {
       <Process />
       <Testimonials />
       <CtaSection />
-      <Footer />
     </main>
   );
 }

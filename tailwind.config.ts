@@ -16,6 +16,9 @@ const config: Config = {
         coral:   "var(--coral)",
         gold:    "var(--gold)",
         mid:     "var(--mid)",
+        border:  "var(--border)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
       fontFamily: {
         display: ["Syne", "sans-serif"],

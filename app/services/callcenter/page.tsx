@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import WhyMadagascar from "@/components/callcenter/WhyMadagascar";
 import CtaSection from "@/components/home/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
@@ -66,7 +64,6 @@ const FAQ = [
 export default function CallCenterPage() {
   return (
     <main>
-      <Navbar />
 
       {/* Hero split */}
       <section className="relative overflow-hidden grid-bg" style={{ backgroundColor: "var(--ink)", minHeight: "70vh" }}>
@@ -234,7 +231,6 @@ export default function CallCenterPage() {
       <MiniTestimonials items={TESTIMONIALS} />
       <FaqSection items={FAQ} />
       <CtaSection />
-      <Footer />
     </main>
   );
 }

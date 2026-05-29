@@ -1,5 +1,3 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import CtaSection from "@/components/home/CtaSection";
 import Link from "next/link";
 
@@ -72,7 +70,6 @@ const SERVICES = [
 export default function ServicesPage() {
   return (
     <main>
-      <Navbar />
 
       {/* Hero */}
       <section className="relative min-h-[55vh] flex flex-col justify-center grid-bg px-6 pt-24 pb-16"
@@ -156,7 +153,6 @@ export default function ServicesPage() {
       </section>
 
       <CtaSection />
-      <Footer />
     </main>
   );
 }

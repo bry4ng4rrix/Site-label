@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import CtaSection from "@/components/home/CtaSection";
 import ProjetsList from "@/components/projets/ProjetsList";
 
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function ProjetsPage() {
   return (
     <main>
-      <Navbar />
 
       {/* Hero */}
       <section className="relative min-h-[50vh] flex flex-col justify-center grid-bg px-6 pt-24 pb-16"
@@ -35,7 +32,6 @@ export default function ProjetsPage() {
 
       <ProjetsList />
       <CtaSection />
-      <Footer />
     </main>
   );
 }

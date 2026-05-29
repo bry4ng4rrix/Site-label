@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Geist } from "next/font/google";
+import { Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Label Technology",
     title: "Label Technology — Partenaire Technologique Premium",
     description:
-      "Call center 50P, développement web, marketing digital, ERP. Depuis Antananarivo, avec l'exigence d'un partenaire européen.",
+      "Call center 50P, développement web, marketing digital, ERP. Depuis Antananarivo, with l'exigence d'un partenaire européen.",
     images: [
       {
         url: "/og-image.png",
@@ -74,8 +76,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={cn("font-sans", geist.variable)}>
-      <body className="antialiased">{children}</body>
+    <html lang="fr" className={cn("font-sans")}>
+      <body className="antialiased">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import CtaSection from "@/components/home/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
@@ -51,7 +49,6 @@ const FAQ = [
 export default function ComptabilitePage() {
   return (
     <main>
-      <Navbar />
 
       {/* Hero split */}
       <section className="relative overflow-hidden grid-bg" style={{ backgroundColor: "var(--ink)", minHeight: "70vh" }}>
@@ -195,7 +192,6 @@ export default function ComptabilitePage() {
       <MiniTestimonials items={TESTIMONIALS} />
       <FaqSection items={FAQ} />
       <CtaSection />
-      <Footer />
     </main>
   );
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const SERVICES = [
   { key: "dev",        href: "/services/dev",        labelFr: "Développement",         labelEn: "Development" },
@@ -53,10 +54,10 @@ export default function Navbar() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="text-white/80 hover:text-white label-tag text-xs transition-colors flex items-center gap-1">
+            <Button className="text-white/80 hover:text-white hover:scale-105 label-tag text-xs transition-colors flex items-center gap-1">
               {t("SERVICES", "SERVICES")}
               <span className="text-[10px]">▾</span>
-            </button>
+            </Button>
 
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 bg-[#0A0F1E] border border-white/10 rounded-sm shadow-2xl py-2">
