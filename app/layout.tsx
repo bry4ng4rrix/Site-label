@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans} from "next/font/google";
-import "./globals.css";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
+import "@/app/globals.css";
 import { cn } from "@/lib/utils";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-jakarta",
+  display: "swap",
+});
+
+const rytech = localFont({
+  src: "../public/fonts/Rytech.ttf",
+  variable: "--font-rytech",
   display: "swap",
 });
 
@@ -76,8 +82,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={cn("font-sans")}>
-      <body className="antialiased">
+    <html lang="fr" className={cn(jakarta.variable, rytech.variable)}>
+      <body className="antialiased font-sans">
         <Navbar />
         {children}
         <Footer />

@@ -24,7 +24,7 @@ export default function Hero() {
         </div>
 
         <h1
-          className="font-display text-white mb-6 max-w-4xl animate-fadeup-d1"
+          className="font-display text-white mb-6 max-w-4xl font-rytech animate-fadeup-d1"
           style={{ fontSize: "clamp(42px, 7vw, 88px)" }}
         >
           La technologie au service{" "}

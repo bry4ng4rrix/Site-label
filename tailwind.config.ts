@@ -22,7 +22,8 @@ const config: Config = {
       },
       fontFamily: {
         display: ["Syne", "sans-serif"],
-        sans:    ["DM Sans", "sans-serif"],
+        sans:    ["var(--font-jakarta)", "DM Sans", "sans-serif"],
+        rytech:  ["var(--font-rytech)", "sans-serif"],
       },
       fontSize: {
         hero: "clamp(48px, 7vw, 96px)",
