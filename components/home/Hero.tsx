@@ -24,8 +24,8 @@ export default function Hero() {
         </div>
 
         <h1
-          className="font-display text-white mb-6 max-w-4xl font-rytech animate-fadeup-d1"
-          style={{ fontSize: "clamp(42px, 7vw, 88px)" }}
+          className="text-white mb-6 max-w-4xl font-rytech text-6xl animate-fadeup-d1"
+        
         >
           La technologie au service{" "}
           <span style={{ color: "var(--brand-lt)" }}>de votre croissance.</span>

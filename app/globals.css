@@ -150,3 +150,11 @@ body {
   }
   
 
+
+@font-face {
+  font-family: "Rostex";
+  src: url("/fonts/Rostex.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

@@ -100,12 +100,12 @@ export default function Navbar() {
           className="flex items-center shrink-0"
         >
           <Image
-            src="/logo-navbar-white.svg"
+            src="/logo.png"
             alt="Label Technology"
-            width={190}
-            height={38}
+            width={120}
+            height={90}
             priority
-            className="w-auto h-9"
+            className="w-auto h-24"
           />
         </Link>
 

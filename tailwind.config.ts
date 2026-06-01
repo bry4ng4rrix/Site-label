@@ -19,12 +19,12 @@ const config: Config = {
         border:  "var(--border)",
         background: "var(--background)",
         foreground: "var(--foreground)",
-      },
-      fontFamily: {
-        display: ["Syne", "sans-serif"],
-        sans:    ["var(--font-jakarta)", "DM Sans", "sans-serif"],
-        rytech:  ["var(--font-rytech)", "sans-serif"],
-      },
+      },fontFamily: {
+  display: ["Syne", "sans-serif"],
+  sans: ["var(--font-jakarta)", "DM Sans", "sans-serif"],
+  rytech: ["var(--font-rytech)", "sans-serif"],
+  rostex: ["Rostex", "sans-serif"], // ← ajout
+},
       fontSize: {
         hero: "clamp(48px, 7vw, 96px)",
       },
@@ -37,6 +37,7 @@ const config: Config = {
         fadeup: "fadeUp 0.7s ease forwards",
         ticker: "ticker 28s linear infinite",
       },
+      
     },
   },
   plugins: [],
