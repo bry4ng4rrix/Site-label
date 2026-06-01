@@ -1,28 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { useTheme } from "next-themes";
+import { Sun, Moon } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu"
+import { Button } from "@/components/ui/button";
+const Navbard = () => {
+  const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, resolvedTheme, setTheme } = useTheme();
+  const activeTheme = mounted ? resolvedTheme ?? theme : "light";
 
-import { Switch } from "@/components/ui/switch";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+  useEffect(() => setMounted(true), []);
 
-import {
-  ChevronDown,
-  Menu,
-  ArrowRight,
-} from "lucide-react";
+const links = [
+  { name: "Projets", href: "/" },
+  { name: "A propos", href: "/about" },
+  { name: "Blog", href: "/contact" },
+];
 
-const SERVICES = [
+const services = [
   {
     key: "dev",
     href: "/services/dev",
@@ -62,388 +69,153 @@ const SERVICES = [
   },
 ];
 
-export default function Navbar() {
-  const [locale, setLocale] = useState<"fr" | "en">("fr");
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const t = (fr: string, en: string) =>
-    locale === "fr" ? fr : en;
 
   return (
-    <header
-      className={`
-        fixed top-0 left-0 right-0 z-50
-        transition-all duration-300
-        ${
-          scrolled
-            ? "bg-[#0A0F1E]/60 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
-            : "bg-transparent"
-        }
-      `}
-    >
-      <nav className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center shrink-0"
-        >
-          <Image
-            src="/logo.png"
-            alt="Label Technology"
-            width={120}
-            height={90}
-            priority
-            className="w-auto h-24"
-          />
-        </Link>
-
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-3">
-          <NavigationMenu>
-            <NavigationMenuList className="gap-2">
-              {/* Services */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className="
-                    bg-transparent
-                    text-white/70
-                    hover:text-white
-                    hover:bg-white/5
-                    data-[state=open]:bg-white/5
-                    data-[state=open]:text-white
-                    rounded-xl
-                    px-4
-                  "
-                >
-                  SERVICES
-                </NavigationMenuTrigger>
-
-                <NavigationMenuContent>
-                  <div
-                    className="
-                      w-[320px]
-                      bg-[#0F172A]/95
-                      backdrop-blur-xl
-                      border border-white/10
-                      rounded-2xl
-                      p-3
-                      shadow-2xl
-                    "
-                  >
-                    <div className="space-y-1">
-                      {SERVICES.map((service) => (
-                        <Link
-                          key={service.key}
-                          href={service.href}
-                          className="
-                            flex items-center justify-between
-                            rounded-xl
-                            px-4 py-3
-                            text-sm
-                            text-white/70
-                            hover:text-white
-                            hover:bg-white/5
-                            transition-all
-                          "
-                        >
-                          <span>
-                            {t(
-                              service.labelFr,
-                              service.labelEn
-                            )}
-                          </span>
-
-                          <div className="flex items-center gap-2">
-                            {service.badge && (
-                              <span
-                                className="
-                                  bg-amber-400
-                                  text-black
-                                  text-[10px]
-                                  font-bold
-                                  px-2 py-1
-                                  rounded-full
-                                "
-                              >
-                                {service.badge}
-                              </span>
-                            )}
-
-                            <ArrowRight className="w-4 h-4" />
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              {/* Links */}
-              {[
-                {
-                  href: "/projets",
-                  fr: "PROJETS",
-                  en: "PROJECTS",
-                },
-                {
-                  href: "/a-propos",
-                  fr: "À PROPOS",
-                  en: "ABOUT",
-                },
-                {
-                  href: "/blog",
-                  fr: "BLOG",
-                  en: "BLOG",
-                },
-              ].map((item) => (
-                <NavigationMenuItem key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="
-                      px-4 py-2
-                      rounded-xl
-                      text-sm
-                      text-white/70
-                      hover:text-white
-                      hover:bg-white/5
-                      transition-all
-                    "
-                  >
-                    {t(item.fr, item.en)}
-                  </Link>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-
-        {/* Right Side */}
-        <div className="hidden lg:flex items-center gap-4">
-          {/* Custom Language Switch */}
-          <div
-            className="
-              flex items-center gap-3
-              bg-white/5
-              border border-white/10
-              rounded-full
-              px-3 py-2
-              backdrop-blur-md
-            "
-          >
-            <span
-              className={`text-xs font-medium transition-colors ${
-                locale === "fr"
-                  ? "text-white"
-                  : "text-white/40"
-              }`}
-            >
-              FR
-            </span>
-
-            <Switch
-              checked={locale === "en"}
-              onCheckedChange={(checked) =>
-                setLocale(checked ? "en" : "fr")
-              }
-              className="
-                data-[state=checked]:bg-blue-500
-                data-[state=unchecked]:bg-white/20
-              "
-            />
-
-            <span
-              className={`text-xs font-medium transition-colors ${
-                locale === "en"
-                  ? "text-white"
-                  : "text-white/40"
-              }`}
-            >
-              EN
-            </span>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-950/50 text-white backdrop-blur border-b border-border">
+      <div className="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex h-full items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center">
+              <Image
+                src={
+                  activeTheme === "dark"
+                    ? "/images/logo_dark.png"
+                    : "/images/logo_light.png"
+                }
+                alt="logo"
+                width={200}
+                height={60}
+                className="h-10 w-auto"
+                loading="eager"
+              />
+            </Link>
           </div>
 
-          {/* CTA */}
-          <Button
-            asChild
-            className="
-              rounded-full
-              px-6
-              bg-white
-              text-black
-              hover:bg-white/90
-              shadow-lg
-            "
-          >
-            <Link href="/contact">
-              {t(
-                "DÉMARRER UN PROJET",
-                "START A PROJECT"
-              )}
-            </Link>
-          </Button>
-        </div>
 
-        {/* Mobile Menu */}
-        <div className="lg:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="text-white hover:bg-white/10"
-              >
-                <Menu className="w-6 h-6" />
-              </Button>
-            </SheetTrigger>
 
-            <SheetContent
-              side="right"
-              className="
-                bg-[#0A0F1E]/95
-                backdrop-blur-2xl
-                border-white/10
-                text-white
-              "
-            >
-              <div className="mt-10 space-y-3">
-                {/* Services */}
-                <div className="space-y-1">
-                  <div
-                    className="
-                      flex items-center gap-2
-                      text-sm font-medium
-                      text-white/60
-                      mb-2
-                    "
-                  >
-                    SERVICES
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
 
-                  {SERVICES.map((service) => (
-                    <Link
-                      key={service.key}
-                      href={service.href}
-                      className="
-                        flex items-center justify-between
-                        rounded-xl
-                        px-4 py-3
-                        hover:bg-white/5
-                        text-white/80
-                        transition-all
-                      "
-                    >
-                      <span>
-                        {t(
-                          service.labelFr,
-                          service.labelEn
-                        )}
-                      </span>
-
-                      {service.badge && (
-                        <span
-                          className="
-                            bg-amber-400
-                            text-black
-                            text-[10px]
-                            font-bold
-                            px-2 py-1
-                            rounded-full
-                          "
-                        >
-                          {service.badge}
-                        </span>
-                      )}
-                    </Link>
-                  ))}
-                </div>
-
-                {/* Links */}
-                {[
-                  {
-                    href: "/projets",
-                    fr: "Projets",
-                    en: "Projects",
-                  },
-                  {
-                    href: "/a-propos",
-                    fr: "À propos",
-                    en: "About",
-                  },
-                  {
-                    href: "/blog",
-                    fr: "Blog",
-                    en: "Blog",
-                  },
-                  {
-                    href: "/contact",
-                    fr: "Contact",
-                    en: "Contact",
-                  },
-                ].map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="
-                      block
-                      rounded-xl
-                      px-4 py-3
-                      hover:bg-white/5
-                      text-white/80
-                      transition-all
-                    "
-                  >
-                    {t(item.fr, item.en)}
-                  </Link>
-                ))}
-
-                {/* Mobile Switch */}
-                <div
-                  className="
-                    flex items-center justify-between
-                    rounded-xl
-                    border border-white/10
-                    bg-white/5
-                    px-4 py-4
-                    mt-6
-                  "
+          <div className="hidden md:flex items-center gap-6">
+            <NavigationMenu>
+  <NavigationMenuList>
+  <NavigationMenuItem className="hidden md:flex">
+          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              {services.map((service) => (
+                <ListItem
+                  key={service.key}
+                  title={service.labelFr}
+                  href={service.href}
                 >
-                  <span className="text-sm text-white/70">
-                    Language
-                  </span>
+                  {service.labelEn}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-md font-medium text-muted-foreground hover:text-foreground"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
 
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs">FR</span>
+          <div className="hidden md:flex items-center gap-3">
+           
+            <Button className="bg-blue-500 text-white">
+              Demarrer un projets
+            </Button>
+          </div>
 
-                    <Switch
-                      checked={locale === "en"}
-                      onCheckedChange={(checked) =>
-                        setLocale(
-                          checked ? "en" : "fr"
-                        )
-                      }
-                    />
-
-                    <span className="text-xs">EN</span>
-                  </div>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+              className="inline-flex items-center justify-center p-2 rounded-md"
+            >
+              {open ? (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+
+      {open && (
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur">
+          <div className="px-4 py-3 space-y-3">
+            <div className="space-y-2">
+              {links.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+           
+            <Button className="w-full bg-blue-500 text-white">Demarrer un projets</Button>
+          </div>
+        </div>
+      )}
+    </nav>
   );
+};
+
+
+function ListItem({
+  title,
+  children,
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+  return (
+    <li {...props}>
+      <NavigationMenuLink asChild>
+        <Link href={href}>
+          <div className="flex flex-col gap-1 text-sm">
+            <div className="leading-none font-medium">{title}</div>
+            <div className="line-clamp-2 text-muted-foreground">{children}</div>
+          </div>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  )
 }
+
+
+export default Navbard;

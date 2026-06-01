@@ -39,11 +39,8 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <div>
+     
       <Hero />
       <Ticker />
       <ServicesGrid />
@@ -51,6 +48,6 @@ export default function Home() {
       <Process />
       <Testimonials />
       <CtaSection />
-    </main>
+    </div>
   );
 }

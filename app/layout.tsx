@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "next-themes";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -82,11 +83,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={cn(jakarta.variable, rytech.variable)}>
+    <html lang="fr" className={cn(jakarta.variable, rytech.variable)}
+    suppressHydrationWarning
+    >
       <body className="antialiased font-sans">
+       <ThemeProvider attribute="class" enableSystem={false} defaultTheme="light" storageKey="label-theme">
         <Navbar />
         {children}
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,77 +1,72 @@
-import Link from "next/link";
+"use client";
+import React from "react";
+import Aurora from "@/components/Aurora";
+import { Button } from "@/components/ui/button";
+const Hero = () => {
+  const STATS = [
+    { value: "50", label: "postes Call Center" },
+    { value: "7", label: "domaines d'expertise" },
+    { value: "FR/EN", label: "bilingue certifié" },
+    { value: "72h", label: "délai de réponse" },
+  ];
 
-const STATS = [
-  { value: "50",    label: "postes Call Center" },
-  { value: "7",     label: "domaines d'expertise" },
-  { value: "FR/EN", label: "bilingue certifié" },
-  { value: "72h",   label: "délai de réponse" },
-];
-
-export default function Hero() {
   return (
-    <section
-      className="relative min-h-screen flex flex-col justify-center grid-bg overflow-hidden"
-      style={{ backgroundColor: "var(--ink)" }}
-    >
-      <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl pointer-events-none"
-        style={{ background: "var(--brand)" }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
-        <div className="label-tag text-white/50 mb-8 animate-fadeup">
-          Antananarivo · Madagascar · International
+    <div className="relative w-full h-[calc(100vh-64px)] overflow-hidden bg-slate-950 dark:bg-slate-800">
+      <div className="absolute inset-0">
+        <Aurora />
+      </div>
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-start px-4">
+        <div className="max-w-4xl  space-y-6">
+          <p className="font-semibold text-white/70">
+            Antananarivo · Madagascar · International
+          </p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-rostex text-white">
+            La technologie au services{" "}
+            <span className="text-blue-500"> de votre croissance.</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200 mb-8 ">
+            Développement web, Call Center 50 postes FR/EN, Marketing digital,
+            Digitalisation, Traitement de données, Matériel IT & Comptabilité —
+            une seule équipe, sept expertises, des résultats mesurables.
+          </p>
+          <p className="text-lg md:text-xl text-white/70 ">
+            "Votre vision, notre expertise : l'alliance qui transforme le
+            potentiel en performance."
+          </p>
+          <div className="flex space-x-4">
+            <Button
+              className="h-14 text-medium bg-blue-500 text-white"
+              size="lg"
+            >
+              Demarrer un projets
+            </Button>
+            <Button className="h-14 text-medium" variant="outline" size="lg">
+              Call Center 50 postes
+            </Button>
+          </div>
         </div>
-
-        <h1
-          className="text-white mb-6 max-w-4xl font-rytech text-6xl animate-fadeup-d1"
-        
-        >
-          La technologie au service{" "}
-          <span style={{ color: "var(--brand-lt)" }}>de votre croissance.</span>
-        </h1>
-
-        <p className="text-white/70 text-lg max-w-2xl leading-relaxed mb-5 animate-fadeup-d2" style={{ lineHeight: 1.8 }}>
-          Développement web, Call Center 50 postes FR/EN, Marketing digital,
-          Digitalisation, Traitement de données, Matériel IT & Comptabilité —
-          une seule équipe, sept expertises, des résultats mesurables.
-        </p>
-
-        <p className="text-white/35 text-sm italic mb-10 max-w-2xl animate-fadeup-d2">
-          "Votre vision, notre expertise : l'alliance qui transforme le potentiel en performance."
-        </p>
-
-        <div className="flex flex-wrap gap-4 mb-20 animate-fadeup-d3">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold rounded-sm transition-all hover:opacity-90 active:scale-95"
-            style={{ backgroundColor: "var(--coral)" }}
-          >
-            Démarrer un projet →
-          </Link>
-          <Link
-            href="/services/callcenter"
-            className="inline-flex items-center gap-2 px-6 py-3 text-white font-light rounded-sm border border-white/20 hover:border-white/50 transition-colors"
-          >
-            Call Center 50 postes
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-sm overflow-hidden animate-fadeup-d5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px rounded-sm overflow-hidden animate-fadeup-d5 mt-10">
           {STATS.map((stat, i) => (
             <div
               key={i}
               className="px-6 py-5 text-center hover:bg-white/5 transition-colors"
               style={{ backgroundColor: "var(--ink)" }}
             >
-              <div className="font-display text-3xl mb-1" style={{ color: "var(--brand-lt)" }}>
+              <div
+                className=" text-3xl mb-1"
+                style={{ color: "var(--brand-lt)" }}
+              >
                 {stat.value}
               </div>
-              <div className="text-white/50 text-xs label-tag">{stat.label}</div>
+              <div className="text-white/50 text-xs label-tag">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Hero;
