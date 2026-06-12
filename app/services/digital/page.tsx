@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import CtaSection from "@/components/home/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 import Link from "next/link";
 
-const DigitalChart = dynamic(() => import("@/components/services/DigitalChart"), { ssr: false });
+import DigitalChart from "@/components/services/DigitalChartWrapper";
 
 export const metadata: Metadata = {
   title: "Digitalisation & ERP — Odoo, SIRH, Logiciels métier | Label Technology",

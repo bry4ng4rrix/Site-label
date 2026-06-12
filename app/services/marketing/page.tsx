@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import CtaSection from "@/components/home/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 import Link from "next/link";
 
-const MarketingChart = dynamic(() => import("@/components/services/MarketingChart"), { ssr: false });
+import MarketingChart from "@/components/services/MarketingChartWrapper";
 
 export const metadata: Metadata = {
   title: "Marketing Digital — SEO, Google Ads, Social Media | Label Technology",

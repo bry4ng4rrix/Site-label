@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import CtaSection from "@/components/home/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 import Link from "next/link";
 
-const DataChart = dynamic(() => import("@/components/services/DataChart"), { ssr: false });
+import DataChart from "@/components/services/DataChartWrapper";
 
 export const metadata: Metadata = {
   title: "Traitement de Données — Saisie, Nettoyage, Analyse | Label Technology",

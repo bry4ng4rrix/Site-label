@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import CtaSection from "@/components/home/CtaSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 
-const GrowthChart = dynamic(() => import("@/components/apropos/GrowthChart"), { ssr: false });
+import GrowthChart from "@/components/apropos/GrowthChartWrapper";
 
 export const metadata: Metadata = {
   title: "À Propos — Label Technology, fondée en 2022 à Antananarivo",

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import WhyMadagascar from "@/components/callcenter/WhyMadagascar";
 import CtaSection from "@/components/home/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 import Link from "next/link";
 
-const PerformanceChart = dynamic(() => import("@/components/callcenter/PerformanceChart"), { ssr: false });
+import PerformanceChart from "@/components/callcenter/PerformanceChartWrapper";
 
 export const metadata: Metadata = {
   title: "Call Center 50 Postes FR/EN — Prospection B2B & Support Client",

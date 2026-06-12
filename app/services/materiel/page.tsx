@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import CtaSection from "@/components/home/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 import Link from "next/link";
 
-const MaterielChart = dynamic(() => import("@/components/services/MaterielChart"), { ssr: false });
+import MaterielChart from "@/components/services/MaterielChartWrapper";
 
 export const metadata: Metadata = {
   title: "Vente Matériel Informatique — PC, Réseau, Infrastructure | Label Technology",

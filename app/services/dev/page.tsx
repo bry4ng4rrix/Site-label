@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import CtaSection from "@/components/home/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import MiniTestimonials from "@/components/shared/MiniTestimonials";
 import Link from "next/link";
 
-const DevChart = dynamic(() => import("@/components/services/DevChart"), { ssr: false });
+import DevChart from "@/components/services/DevChartWrapper";
 
 export const metadata: Metadata = {
   title: "Développement Web & Mobile — Next.js, React, Node.js",
