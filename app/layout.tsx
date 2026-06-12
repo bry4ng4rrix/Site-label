@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import "@/app/globals.css";
+import "./globals.css";
 import { cn } from "@/lib/utils";
 
 import Navbar from "@/components/layout/Navbar";
@@ -23,7 +23,8 @@ const rytech = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Label Technology — Partenaire Technologique Premium | Antananarivo",
+    default:
+      "Label Technology — Partenaire Technologique Premium | Antananarivo",
     template: "%s | Label Technology",
   },
   description:
@@ -83,14 +84,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={cn(jakarta.variable, rytech.variable)}
-    suppressHydrationWarning
+    <html
+      lang="fr"
+      className={cn(jakarta.variable, rytech.variable)}
+      suppressHydrationWarning
     >
       <body className="antialiased font-sans">
-       <ThemeProvider attribute="class" enableSystem={false} defaultTheme="light" storageKey="label-theme">
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          enableSystem={false}
+          defaultTheme="light"
+          storageKey="label-theme"
+        >
+          <Navbar />
+          {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
