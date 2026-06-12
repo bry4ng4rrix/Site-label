@@ -29,23 +29,21 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: "var(--white)" }}>
+    <section className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="mb-14">
           <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOTRE MÉTHODE</p>
-          <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">
             Comment on travaille.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-black/8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/30">
           {STEPS.map((step, i) => (
             <div
               key={i}
-              className="relative p-8 group hover:bg-gray-50 transition-colors"
-              style={{ backgroundColor: "var(--white)" }}
+              className="relative p-8 group bg-card hover:bg-accent transition-colors"
             >
-              {/* Number */}
               <div
                 className="font-display text-6xl font-extrabold mb-6 opacity-15 group-hover:opacity-25 transition-opacity"
                 style={{ color: step.color, lineHeight: 1 }}
@@ -53,29 +51,16 @@ export default function Process() {
                 {step.num}
               </div>
 
-              {/* Color bar */}
-              <div
-                className="w-8 h-0.5 mb-5"
-                style={{ backgroundColor: step.color }}
-              />
+              <div className="w-8 h-0.5 mb-5" style={{ backgroundColor: step.color }} />
 
-              {/* Title */}
-              <h3
-                className="font-display text-xl mb-4"
-                style={{ color: "var(--ink)" }}
-              >
+              <h3 className="font-display text-xl mb-4 text-foreground">
                 {step.title}
               </h3>
 
-              {/* Description */}
-              <p
-                className="text-[15px] leading-relaxed"
-                style={{ color: "#374151", lineHeight: 1.7 }}
-              >
+              <p className="text-[15px] text-muted-foreground" style={{ lineHeight: 1.7 }}>
                 {step.desc}
               </p>
 
-              {/* Connector arrow (desktop only) */}
               {i < STEPS.length - 1 && (
                 <div
                   className="hidden lg:block absolute top-1/2 -right-3 z-10 text-lg -translate-y-1/2"

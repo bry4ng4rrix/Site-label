@@ -92,34 +92,27 @@ export default function ServicesPage() {
       {/* Grid services */}
       <section className="py-24 px-6" style={{ backgroundColor: "var(--paper)" }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((s, i) => (
               <Link key={i} href={s.href}
-                className="group p-8 border rounded-sm flex flex-col transition-all card-hover"
-                style={{
-                  borderColor: s.featured ? "var(--brand)" : "rgba(0,0,0,0.08)",
-                  backgroundColor: s.featured ? "var(--ink)" : "var(--white)",
-                }}>
+                className="group p-8 border rounded-sm flex flex-col transition-all card-hover bg-card"
+                style={{ borderColor: s.featured ? "var(--brand)" : "transparent" }}>
                 <span className="label-tag text-[10px] mb-3"
                   style={{ color: s.featured ? "var(--brand-lt)" : "var(--brand)" }}>
                   {s.tag}
                 </span>
-                <h2 className="font-display text-2xl mb-2"
-                  style={{ color: s.featured ? "var(--white)" : "var(--ink)" }}>
+                <h2 className="font-display text-2xl mb-2 text-foreground">
                   {s.title}
                 </h2>
-                <p className="text-sm font-light italic mb-5"
-                  style={{ color: s.featured ? "rgba(255,255,255,0.4)" : "var(--mid)" }}>
+                <p className="text-sm font-light italic mb-5 text-muted-foreground">
                   {s.accroche}
                 </p>
-                <p className="text-sm font-light leading-relaxed mb-6 flex-1"
-                  style={{ color: s.featured ? "rgba(255,255,255,0.6)" : "var(--mid)" }}>
+                <p className="text-sm font-light leading-relaxed mb-6 flex-1 text-muted-foreground">
                   {s.desc}
                 </p>
                 <ul className="space-y-1.5 mb-6">
                   {s.items.map((item, j) => (
-                    <li key={j} className="flex items-center gap-2 text-xs"
-                      style={{ color: s.featured ? "rgba(255,255,255,0.5)" : "var(--mid)" }}>
+                    <li key={j} className="flex items-center gap-2 text-xs text-muted-foreground">
                       <span style={{ color: "var(--gold)" }}>◆</span>
                       {item}
                     </li>

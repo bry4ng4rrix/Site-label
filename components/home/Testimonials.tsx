@@ -40,7 +40,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-14">
           <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>TÉMOIGNAGES CLIENTS</p>
-          <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">
             Des résultats,<br />
             <span style={{ color: "var(--brand)" }}>pas des promesses.</span>
           </h2>
@@ -48,17 +48,13 @@ export default function Testimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, i) => (
-            <Card
-              key={i}
-              className="border flex flex-col"
-              style={{ borderColor: "rgba(0,0,0,0.08)", backgroundColor: "var(--white)" }}
-            >
+            <Card key={i} className="flex flex-col">
               <CardContent className="pt-7 pb-4 flex flex-col flex-1">
                 <Badge
                   variant="secondary"
                   className="label-tag text-[10px] mb-6 self-start px-2 py-1 rounded-sm border-0"
                   style={{
-                    backgroundColor: `color-mix(in srgb, ${t.color} 12%, transparent)`,
+                    backgroundColor: `color-mix(in srgb, ${t.color} 15%, transparent)`,
                     color: t.color,
                   }}
                 >
@@ -72,18 +68,12 @@ export default function Testimonials() {
                   &ldquo;
                 </div>
 
-                <p
-                  className="text-base leading-relaxed font-light flex-1"
-                  style={{ color: "var(--ink)" }}
-                >
+                <p className="text-base leading-relaxed font-light flex-1 text-foreground">
                   {t.quote}
                 </p>
               </CardContent>
 
-              <CardFooter
-                className="pt-5 border-t"
-                style={{ borderColor: "rgba(0,0,0,0.07)" }}
-              >
+              <CardFooter className="pt-5 border-t">
                 <div className="flex items-center gap-3">
                   <Image
                     src={t.avatar}
@@ -93,12 +83,8 @@ export default function Testimonials() {
                     className="rounded-full object-cover shrink-0"
                   />
                   <div>
-                    <div className="font-medium text-sm mb-0.5" style={{ color: "var(--ink)" }}>
-                      {t.author}
-                    </div>
-                    <div className="text-xs" style={{ color: "#6B7280" }}>
-                      {t.role} · {t.company}
-                    </div>
+                    <div className="font-medium text-sm mb-0.5 text-foreground">{t.author}</div>
+                    <div className="text-xs text-muted-foreground">{t.role} · {t.company}</div>
                   </div>
                 </div>
               </CardFooter>
