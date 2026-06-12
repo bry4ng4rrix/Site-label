@@ -38,17 +38,18 @@ const Navbar = () => {
   ];
 
   const services = [
-    { key: "dev",          href: "/services/dev",        labelFr: "Développement",        labelEn: "Web & Mobile" },
-    { key: "callcenter",   href: "/services/callcenter",  labelFr: "Call Center",          labelEn: "50 postes FR/EN",  badge: "50P" },
-    { key: "marketing",    href: "/services/marketing",   labelFr: "Marketing Digital",    labelEn: "SEO, Ads, Social" },
-    { key: "digital",      href: "/services/digital",     labelFr: "Digitalisation",       labelEn: "ERP, SIRH, RPA" },
-    { key: "data",         href: "/services/data",        labelFr: "Traitement de données", labelEn: "Saisie, Nettoyage, Analyse" },
-    { key: "materiel",     href: "/services/materiel",    labelFr: "Matériel IT",          labelEn: "Réseau, Postes, Serveurs" },
-    { key: "comptabilite", href: "/services/comptabilite",labelFr: "Comptabilité",         labelEn: "Saisie, Reporting" },
+    { key: "dev",          href: "/services/dev",         labelFr: "Développement",         labelEn: "Web & Mobile" },
+    { key: "callcenter",   href: "/services/callcenter",   labelFr: "Call Center",           labelEn: "50 postes FR/EN", badge: "50P" },
+    { key: "marketing",    href: "/services/marketing",    labelFr: "Marketing Digital",     labelEn: "SEO, Ads, Social" },
+    { key: "digital",      href: "/services/digital",      labelFr: "Digitalisation",        labelEn: "ERP, SIRH, RPA" },
+    { key: "data",         href: "/services/data",         labelFr: "Traitement de données", labelEn: "Saisie, Nettoyage, Analyse" },
+    { key: "materiel",     href: "/services/materiel",     labelFr: "Matériel IT",           labelEn: "Réseau, Postes, Serveurs" },
+    { key: "comptabilite", href: "/services/comptabilite", labelFr: "Comptabilité",          labelEn: "Saisie, Reporting" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-950/50 text-white backdrop-blur border-b border-border">
+    /* Pas de text-white global — le Viewport du NavigationMenu gère ses propres couleurs */
+    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur border-b border-white/10">
       <div className="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8">
         <div className="flex h-full items-center justify-between">
 
@@ -65,13 +66,16 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
+            {/* NavigationMenu isolé — text-white explicite sur le trigger uniquement */}
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-white/80 hover:text-white hover:bg-white/10 focus:bg-white/10 data-open:bg-white/10">
+                    Services
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[420px] gap-2 md:w-[520px] md:grid-cols-2 lg:w-[640px] p-2">
+                    <ul className="grid w-[420px] gap-1 p-3 md:w-[520px] md:grid-cols-2 lg:w-[640px]">
                       {services.map((service) => (
                         <ListItem
                           key={service.key}
@@ -92,7 +96,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-white/70 hover:text-white transition-colors"
               >
                 {link.name}
               </Link>
@@ -101,17 +105,16 @@ const Navbar = () => {
 
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Dark mode toggle */}
             <div className="flex items-center gap-2">
-              <Sun className="h-4 w-4 text-muted-foreground" />
+              <Sun className="h-4 w-4 text-white/50" />
               <Switch
                 checked={activeTheme === "dark"}
                 onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
                 aria-label="Basculer le thème"
               />
-              <Moon className="h-4 w-4 text-muted-foreground" />
+              <Moon className="h-4 w-4 text-white/50" />
             </div>
-            <Button asChild className="bg-blue-500 hover:bg-blue-600 text-white">
+            <Button asChild className="bg-blue-500 hover:bg-blue-600 text-white border-0">
               <Link href="/contact">Démarrer un projet</Link>
             </Button>
           </div>
@@ -119,18 +122,17 @@ const Navbar = () => {
           {/* Mobile — Sheet */}
           <div className="md:hidden flex items-center gap-2">
             <div className="flex items-center gap-1.5">
-              <Sun className="h-3.5 w-3.5 text-muted-foreground" />
+              <Sun className="h-3.5 w-3.5 text-white/50" />
               <Switch
                 checked={activeTheme === "dark"}
                 onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
                 aria-label="Basculer le thème"
               />
-              <Moon className="h-3.5 w-3.5 text-muted-foreground" />
+              <Moon className="h-3.5 w-3.5 text-white/50" />
             </div>
-
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" aria-label="Ouvrir le menu">
+                <Button variant="ghost" size="icon" className="text-white/80 hover:text-white hover:bg-white/10" aria-label="Menu">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -139,26 +141,22 @@ const Navbar = () => {
                   <SheetTitle className="text-left">Menu</SheetTitle>
                 </SheetHeader>
                 <div className="mt-6 flex flex-col gap-1">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider px-2 mb-1">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-2 mb-2">
                     Services
                   </p>
                   {services.map((service) => (
-                    <Button key={service.key} variant="ghost" asChild className="justify-start">
+                    <Button key={service.key} variant="ghost" asChild className="justify-start font-normal">
                       <Link href={service.href}>{service.labelFr}</Link>
                     </Button>
                   ))}
-
                   <Separator className="my-3" />
-
                   {links.map((link) => (
-                    <Button key={link.name} variant="ghost" asChild className="justify-start">
+                    <Button key={link.name} variant="ghost" asChild className="justify-start font-normal">
                       <Link href={link.href}>{link.name}</Link>
                     </Button>
                   ))}
-
                   <Separator className="my-3" />
-
-                  <Button asChild className="bg-blue-500 hover:bg-blue-600 text-white mt-2">
+                  <Button asChild className="bg-blue-500 hover:bg-blue-600 text-white mt-1">
                     <Link href="/contact">Démarrer un projet</Link>
                   </Button>
                 </div>
@@ -182,11 +180,15 @@ function ListItem({
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link href={href} className="block select-none rounded-sm p-3 hover:bg-accent transition-colors">
+        <Link
+          href={href}
+          className="block select-none rounded-md p-3 transition-colors hover:bg-accent focus:bg-accent"
+        >
           <div className="flex items-center gap-2 mb-0.5">
-            <span className="text-sm font-medium leading-none">{title}</span>
+            {/* text-foreground explicite — ne dépend pas du parent nav */}
+            <span className="text-sm font-medium leading-none text-foreground">{title}</span>
             {badge && (
-              <span className="text-[10px] px-1.5 py-0.5 rounded-sm bg-blue-500 text-white font-medium">
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500 text-white font-semibold">
                 {badge}
               </span>
             )}
