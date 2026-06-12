@@ -136,10 +136,7 @@ export default function ServicesGrid() {
             <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>
               NOS EXPERTISES
             </p>
-            <h2
-              className="font-display text-4xl md:text-5xl"
-              style={{ color: "var(--ink)" }}
-            >
+            <h2 className="font-display text-4xl md:text-5xl text-foreground">
               7 expertises.
               <br />
               <span style={{ color: "var(--brand)" }}>1 équipe.</span>
@@ -160,12 +157,7 @@ export default function ServicesGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((s) => (
             <Link key={s.id} href={s.href} className="group">
-              <Card
-                className="relative h-full flex flex-col border-0 rounded-lg transition-shadow hover:shadow-md"
-                style={{
-                  backgroundColor: s.featured ? "var(--ink)" : "var(--white)",
-                }}
-              >
+              <Card className="relative h-full flex flex-col border-0 rounded-lg transition-shadow hover:shadow-md bg-card">
                 <CardHeader className="pb-3">
                   {s.badge && (
                     <Badge
@@ -178,49 +170,23 @@ export default function ServicesGrid() {
                       {s.badge}
                     </Badge>
                   )}
-                  <p
-                    className="label-tag text-[10px] mb-2"
-                    style={{
-                      color: s.featured
-                        ? "rgba(255,255,255,0.4)"
-                        : "var(--mid)",
-                    }}
-                  >
+                  <p className="label-tag text-[10px] mb-2 text-muted-foreground">
                     {s.tag}
                   </p>
-                  <h3
-                    className="font-display text-2xl leading-tight"
-                    style={{
-                      color: s.featured ? "var(--white)" : "var(--ink)",
-                    }}
-                  >
+                  <h3 className="font-display text-2xl leading-tight text-foreground">
                     {s.headline}{" "}
                     <span style={{ color: s.color }}>{s.headlineAccent}</span>
                   </h3>
                 </CardHeader>
 
                 <CardContent className="flex-1 pb-4">
-                  <p
-                    className="text-[15px] leading-relaxed mb-6"
-                    style={{
-                      color: s.featured ? "rgba(255,255,255,0.65)" : "#374151",
-                      lineHeight: 1.7,
-                    }}
-                  >
+                  <p className="text-[15px] leading-relaxed mb-6 text-muted-foreground" style={{ lineHeight: 1.7 }}>
                     {s.desc}
                   </p>
 
                   <ul className="space-y-1.5">
                     {s.items.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-center gap-2 text-sm"
-                        style={{
-                          color: s.featured
-                            ? "rgba(255,255,255,0.6)"
-                            : "#4B5563",
-                        }}
-                      >
+                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span style={{ color: s.color }}>→</span>
                         {item}
                       </li>

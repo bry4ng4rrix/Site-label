@@ -99,14 +99,7 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {ARTICLES.map((a, i) => (
-              <Card
-                key={i}
-                className=" flex flex-col"
-                style={{
-                  borderColor: "rgba(0,0,0,0.08)",
-                  backgroundColor: "var(--white)",
-                }}
-              >
+              <Card key={i} className="flex flex-col bg-card border-border">
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between mb-2">
                     <Badge
