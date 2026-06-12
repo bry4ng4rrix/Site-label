@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const TESTIMONIALS = [
   {
@@ -44,52 +46,63 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black/8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, i) => (
-            <div
+            <Card
               key={i}
-              className="p-8 flex flex-col"
-              style={{ backgroundColor: "var(--white)" }}
+              className="border flex flex-col"
+              style={{ borderColor: "rgba(0,0,0,0.08)", backgroundColor: "var(--white)" }}
             >
-              <span
-                className="label-tag text-[10px] mb-6 self-start px-2 py-1"
-                style={{ backgroundColor: `color-mix(in srgb, ${t.color} 12%, transparent)`, color: t.color }}
-              >
-                {t.tag}
-              </span>
+              <CardContent className="pt-7 pb-4 flex flex-col flex-1">
+                <Badge
+                  variant="secondary"
+                  className="label-tag text-[10px] mb-6 self-start px-2 py-1 rounded-sm border-0"
+                  style={{
+                    backgroundColor: `color-mix(in srgb, ${t.color} 12%, transparent)`,
+                    color: t.color,
+                  }}
+                >
+                  {t.tag}
+                </Badge>
 
-              <div
-                className="font-display text-5xl leading-none mb-4 opacity-20"
-                style={{ color: t.color }}
-              >
-                "
-              </div>
+                <div
+                  className="font-display text-5xl leading-none mb-4 opacity-20"
+                  style={{ color: t.color }}
+                >
+                  &ldquo;
+                </div>
 
-              <p
-                className="text-base leading-relaxed font-light mb-8 flex-1"
-                style={{ color: "var(--ink)" }}
-              >
-                {t.quote}
-              </p>
+                <p
+                  className="text-base leading-relaxed font-light flex-1"
+                  style={{ color: "var(--ink)" }}
+                >
+                  {t.quote}
+                </p>
+              </CardContent>
 
-              <div className="border-t pt-5 flex items-center gap-3" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
-                <Image
-                  src={t.avatar}
-                  alt={t.author}
-                  width={40}
-                  height={40}
-                  className="rounded-full object-cover shrink-0"
-                />
-                <div>
-                  <div className="font-medium text-sm mb-0.5" style={{ color: "var(--ink)" }}>
-                    {t.author}
-                  </div>
-                  <div className="text-xs" style={{ color: "#6B7280" }}>
-                    {t.role} · {t.company}
+              <CardFooter
+                className="pt-5 border-t"
+                style={{ borderColor: "rgba(0,0,0,0.07)" }}
+              >
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={t.avatar}
+                    alt={t.author}
+                    width={40}
+                    height={40}
+                    className="rounded-full object-cover shrink-0"
+                  />
+                  <div>
+                    <div className="font-medium text-sm mb-0.5" style={{ color: "var(--ink)" }}>
+                      {t.author}
+                    </div>
+                    <div className="text-xs" style={{ color: "#6B7280" }}>
+                      {t.role} · {t.company}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </CardFooter>
+            </Card>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function CtaSection() {
   return (
@@ -13,11 +14,11 @@ export default function CtaSection() {
           style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: 1.0 }}
         >
           Votre projet mérite mieux
-          qu'une agence généraliste.
+          qu&apos;une agence généraliste.
         </h2>
 
         <p className="text-white/80 text-xl italic mb-8 font-display">
-          Quittez la posture d'acheteur. Prenez la place de partenaire.
+          Quittez la posture d&apos;acheteur. Prenez la place de partenaire.
         </p>
 
         <p className="text-white/70 font-light text-lg max-w-xl mx-auto mb-12 leading-relaxed">
@@ -26,19 +27,21 @@ export default function CtaSection() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white font-medium px-8 py-4 rounded-sm text-sm transition-all hover:bg-gray-50 active:scale-95"
+          <Button
+            asChild
+            className="bg-white hover:bg-gray-50 active:scale-95 px-8 py-4 h-auto text-sm font-medium rounded-sm"
             style={{ color: "var(--coral)" }}
           >
-            Parlons-en →
-          </Link>
-          <Link
-            href="/services/callcenter"
-            className="inline-flex items-center gap-2 border border-white/40 text-white font-light px-8 py-4 rounded-sm text-sm transition-all hover:border-white hover:bg-white/10"
+            <Link href="/contact">Parlons-en →</Link>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            className="border-white/40 text-white hover:border-white hover:bg-white/10 hover:text-white px-8 py-4 h-auto text-sm font-light rounded-sm bg-transparent"
           >
-            Voir l'offre Call Center
-          </Link>
+            <Link href="/services/callcenter">Voir l&apos;offre Call Center</Link>
+          </Button>
         </div>
 
         {/* Réassurance */}
