@@ -119,7 +119,7 @@ export default function CallCenterPage() {
       <section className="py-24 px-6" style={{ backgroundColor: "var(--paper)" }}>
         <div className="max-w-7xl mx-auto">
           <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOTRE OFFRE</p>
-          <h2 className="font-display text-4xl md:text-5xl mb-16" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl md:text-5xl mb-16 text-foreground">
             Ce qu'on fait pour vous.
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -131,11 +131,10 @@ export default function CallCenterPage() {
               { icon: "📅", title: "Prise de rendez-vous", desc: "Qualification des leads inbound et prise de RDV directe dans l'agenda de vos équipes commerciales. Taux de confirmation supérieur à 85% grâce à notre process de double validation." },
               { icon: "🔄", title: "Traitement des leads entrants", desc: "Requalification des demandes web, suivi des prospects chauds, relance automatisée. Aucun lead ne tombe dans l'oubli — chaque contact est tracé jusqu'à la conversion ou la clôture." },
             ].map((s, i) => (
-              <div key={i} className="p-7 border rounded-sm card-hover"
-                style={{ borderColor: "rgba(0,0,0,0.08)", backgroundColor: "var(--white)" }}>
+              <div key={i} className="p-7 border border-border rounded-sm card-hover bg-card">
                 <span className="text-3xl mb-4 block">{s.icon}</span>
-                <h3 className="font-display text-xl mb-3" style={{ color: "var(--ink)" }}>{s.title}</h3>
-                <p className="text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.7 }}>{s.desc}</p>
+                <h3 className="font-display text-xl mb-3 text-foreground">{s.title}</h3>
+                <p className="text-[15px] leading-relaxed text-muted-foreground" style={{ lineHeight: 1.7 }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -177,16 +176,16 @@ export default function CallCenterPage() {
       </section>
 
       {/* Formules */}
-      <section id="formules" className="py-24 px-6" style={{ backgroundColor: "var(--white)" }}>
+      <section id="formules" className="py-24 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>FORMULES</p>
-          <h2 className="font-display text-4xl md:text-5xl mb-4" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl md:text-5xl mb-4 text-foreground">
             Choisissez votre format.
           </h2>
-          <p className="text-base mb-16 max-w-xl" style={{ color: "#374151" }}>
+          <p className="text-base mb-16 max-w-xl text-muted-foreground">
             Tous les tarifs sont sur devis — adaptés à votre volume, vos horaires et vos objectifs.
           </p>
-          <div className="grid md:grid-cols-3 gap-px bg-black/10">
+          <div className="grid md:grid-cols-3 gap-px bg-border/30">
             {FORMULES.map((f, i) => (
               <div key={i} className="p-8 flex flex-col"
                 style={{ backgroundColor: f.featured ? "var(--ink)" : "var(--paper)" }}>

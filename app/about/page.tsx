@@ -84,14 +84,14 @@ export default function AProposPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="label-tag mb-4" style={{ color: "var(--brand)" }}>NOTRE HISTOIRE</p>
-              <h2 className="font-display text-4xl md:text-5xl mb-4 leading-tight" style={{ color: "var(--ink)" }}>
+              <h2 className="font-display text-4xl md:text-5xl mb-4 leading-tight text-foreground">
                 Né à Madagascar.<br />
                 <span style={{ color: "var(--brand)" }}>Pensé pour le monde.</span>
               </h2>
               <p className="font-display text-xl mb-6 leading-snug" style={{ color: "var(--brand)" }}>
                 "Notre plus belle réussite n'est pas ce que nous vendons,<br />c'est ce que vous devenez."
               </p>
-              <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.8 }}>
+              <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground" style={{ lineHeight: 1.8 }}>
                 <p>
                   Label Technology a été fondée avec une conviction simple : Madagascar dispose
                   d'un vivier de talents extraordinaire — ingénieux, bilingues, réactifs —
@@ -134,18 +134,18 @@ export default function AProposPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="py-24 px-6" style={{ backgroundColor: "var(--white)" }}>
+      <section className="py-24 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOS VALEURS</p>
-          <h2 className="font-display text-4xl md:text-5xl mb-16" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl md:text-5xl mb-16 text-foreground">
             Ce qui nous guide.
           </h2>
           <div className="grid md:grid-cols-2 gap-px bg-black/5">
             {VALEURS.map((v, i) => (
-              <div key={i} className="p-8" style={{ backgroundColor: "var(--white)" }}>
+              <div key={i} className="p-8 bg-card">
                 <p className="font-display text-5xl mb-4" style={{ color: "rgba(30,63,171,0.12)" }}>{v.num}</p>
-                <h3 className="font-display text-2xl mb-3" style={{ color: "var(--ink)" }}>{v.title}</h3>
-                <p className="text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.7 }}>{v.desc}</p>
+                <h3 className="font-display text-2xl mb-3 text-foreground">{v.title}</h3>
+                <p className="text-[15px] leading-relaxed text-muted-foreground" style={{ lineHeight: 1.7 }}>{v.desc}</p>
               </div>
             ))}
           </div>
@@ -156,16 +156,15 @@ export default function AProposPage() {
       <section className="py-24 px-6" style={{ backgroundColor: "var(--paper)" }}>
         <div className="max-w-7xl mx-auto">
           <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>L'ÉQUIPE</p>
-          <h2 className="font-display text-4xl md:text-5xl mb-4" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl md:text-5xl mb-4 text-foreground">
             Les gens derrière le travail.
           </h2>
-          <p className="text-[15px] mb-16 max-w-xl" style={{ color: "#374151" }}>
+          <p className="text-[15px] mb-16 max-w-xl text-muted-foreground">
             7 pôles, 7 responsables, 60 collaborateurs. Une équipe construite sur la durée.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {EQUIPE.map((m, i) => (
-              <div key={i} className="p-7 border rounded-sm card-hover"
-                style={{ borderColor: "rgba(0,0,0,0.08)", backgroundColor: "var(--white)" }}>
+              <div key={i} className="p-7 border border-border rounded-sm card-hover bg-card">
                 <Image
                   src={m.photo}
                   alt={m.nom}
@@ -173,9 +172,9 @@ export default function AProposPage() {
                   height={56}
                   className="rounded-full object-cover mb-5"
                 />
-                <h3 className="font-display text-lg mb-0.5" style={{ color: "var(--ink)" }}>{m.nom}</h3>
+                <h3 className="font-display text-lg mb-0.5 text-foreground">{m.nom}</h3>
                 <p className="label-tag text-[10px] mb-3" style={{ color: "var(--brand)" }}>{m.role}</p>
-                <p className="text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.7 }}>{m.desc}</p>
+                <p className="text-[15px] leading-relaxed text-muted-foreground" style={{ lineHeight: 1.7 }}>{m.desc}</p>
               </div>
             ))}
           </div>

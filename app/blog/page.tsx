@@ -119,26 +119,17 @@ export default function BlogPage() {
                     >
                       {a.tag}
                     </Badge>
-                    <span
-                      className="text-[11px]"
-                      style={{ color: "var(--mid)" }}
-                    >
+                    <span className="text-[11px] text-muted-foreground">
                       {a.date} · {a.readtime}
                     </span>
                   </div>
-                  <CardTitle
-                    className="font-display text-lg leading-snug"
-                    style={{ color: "var(--ink)" }}
-                  >
+                  <CardTitle className="font-display text-lg leading-snug text-foreground">
                     {a.title}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="flex-1 pt-0">
-                  <p
-                    className="text-sm font-light leading-relaxed"
-                    style={{ color: "var(--mid)" }}
-                  >
+                  <p className="text-sm font-light leading-relaxed text-muted-foreground">
                     {a.excerpt}
                   </p>
                 </CardContent>

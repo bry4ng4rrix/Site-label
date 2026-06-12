@@ -103,16 +103,15 @@ export default function MarketingPage() {
       <section className="py-24 px-6" style={{ backgroundColor: "var(--paper)" }}>
         <div className="max-w-7xl mx-auto">
           <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOS EXPERTISES</p>
-          <h2 className="font-display text-4xl md:text-5xl mb-16" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl md:text-5xl mb-16 text-foreground">
             Du trafic à la conversion.
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {SERVICES.map((s, i) => (
-              <div key={i} className="p-7 border rounded-sm card-hover"
-                style={{ borderColor: "rgba(0,0,0,0.08)", backgroundColor: "var(--white)" }}>
+              <div key={i} className="p-7 border border-border rounded-sm card-hover bg-card">
                 <span className="text-3xl mb-4 block">{s.icon}</span>
-                <h3 className="font-display text-xl mb-3" style={{ color: "var(--ink)" }}>{s.title}</h3>
-                <p className="text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.7 }}>{s.desc}</p>
+                <h3 className="font-display text-xl mb-3 text-foreground">{s.title}</h3>
+                <p className="text-[15px] leading-relaxed text-muted-foreground" style={{ lineHeight: 1.7 }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -145,19 +144,19 @@ export default function MarketingPage() {
       </section>
 
       {/* Process */}
-      <section className="py-24 px-6" style={{ backgroundColor: "var(--white)" }}>
+      <section className="py-24 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>NOTRE APPROCHE</p>
-          <h2 className="font-display text-4xl md:text-5xl mb-16" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl md:text-5xl mb-16 text-foreground">
             De l'audit aux résultats.
           </h2>
-          <div className="grid md:grid-cols-4 gap-px bg-black/8">
+          <div className="grid md:grid-cols-4 gap-px bg-border/30">
             {PROCESS.map((p, i) => (
-              <div key={i} className="p-8" style={{ backgroundColor: "var(--white)" }}>
+              <div key={i} className="p-8 bg-card">
                 <div className="font-display text-5xl mb-6 opacity-15" style={{ color: "var(--brand)", lineHeight: 1 }}>{p.num}</div>
                 <div className="w-8 h-0.5 mb-5" style={{ backgroundColor: "var(--brand)" }} />
-                <h3 className="font-display text-lg mb-3" style={{ color: "var(--ink)" }}>{p.title}</h3>
-                <p className="text-[15px] leading-relaxed" style={{ color: "#374151", lineHeight: 1.7 }}>{p.desc}</p>
+                <h3 className="font-display text-lg mb-3 text-foreground">{p.title}</h3>
+                <p className="text-[15px] leading-relaxed text-muted-foreground" style={{ lineHeight: 1.7 }}>{p.desc}</p>
               </div>
             ))}
           </div>
