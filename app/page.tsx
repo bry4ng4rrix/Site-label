@@ -40,7 +40,10 @@ const jsonLd = {
 export default function Home() {
   return (
     <div>
-     
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       <Ticker />
       <ServicesGrid />

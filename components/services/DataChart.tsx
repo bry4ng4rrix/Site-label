@@ -1,5 +1,5 @@
 "use client";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 const TYPES = [
   { name: "Saisie & collecte", value: 38, color: "#2E55D4" },
