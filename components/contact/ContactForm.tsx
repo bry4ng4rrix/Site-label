@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { sendContact, type ContactState } from "@/app/actions/contact";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -64,7 +65,7 @@ function FieldLabel({
 }
 
 export default function ContactForm() {
-  const [state, action] = useFormState(sendContact, initialState);
+  const [state, action] = useActionState(sendContact, initialState);
 
   if (state.status === "success") {
     return (

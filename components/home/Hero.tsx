@@ -2,6 +2,7 @@
 import React from "react";
 import Aurora from "@/components/Aurora";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const Hero = () => {
   const STATS = [
     { value: "50", label: "postes Call Center" },
@@ -35,12 +36,16 @@ const Hero = () => {
           </p>
           <div className="flex space-x-4">
             <Button
-              className="h-14 text-medium bg-blue-500 text-white"
+              className="h-14 text-medium bg-blue-500 text-white hover:scale-105 transition-all duration-300"
               size="lg"
             >
-              Demarrer un projets
+              <Link href="/contact">Demarrer un projets</Link>
             </Button>
-            <Button className="h-14 text-medium" variant="outline" size="lg">
+            <Button
+              className="h-14 text-medium hover:scale-105 transition-all duration-300"
+              variant="outline"
+              size="lg"
+            >
               Call Center 50 postes
             </Button>
           </div>
