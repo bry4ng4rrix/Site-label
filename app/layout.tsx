@@ -67,6 +67,9 @@ export const metadata: Metadata = {
       "Call center 50P, développement web, marketing digital, ERP. Depuis Antananarivo.",
     images: ["/og-image.png"],
   },
+  icons: {
+    icon: "/logo.png",
+  },
   robots: {
     index: true,
     follow: true,
