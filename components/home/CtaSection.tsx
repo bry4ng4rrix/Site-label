@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export default function CtaSection() {
   return (
@@ -10,11 +11,10 @@ export default function CtaSection() {
         <p className="label-tag text-white/60 mb-6">PRÊT À DÉMARRER ?</p>
 
         <h2
-          className="font-display text-white mb-5"
+          className="font-rostex text-white mb-5"
           style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: 1.0 }}
         >
-          Votre projet mérite mieux
-          qu&apos;une agence généraliste.
+          Votre projet mérite mieux qu&apos;une agence généraliste.
         </h2>
 
         <p className="text-white/80 text-xl italic mb-8 font-display">
@@ -27,20 +27,19 @@ export default function CtaSection() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button
-            asChild
-            className="bg-white hover:bg-gray-50 active:scale-95 px-8 py-4 h-auto text-sm font-medium rounded-sm"
-            style={{ color: "var(--coral)" }}
-          >
-            <Link href="/contact">Parlons-en →</Link>
+          <Button className="bg-white hover:bg-gray-50 active:scale-95 px-8 py-4 h-auto text-sm font-medium rounded-lg hover:scale-105">
+            <Link href="/contact">Parlons-en</Link>
+            <ArrowRight className=" w-4 h-4" />
           </Button>
 
           <Button
             asChild
             variant="outline"
-            className="border-white/40 text-white hover:border-white hover:bg-white/10 hover:text-white px-8 py-4 h-auto text-sm font-light rounded-sm bg-transparent"
+            className="text-white  px-8 py-4 h-auto text-sm font-light rounded-lg bg-transparent hover:scale-105 hover:text-white"
           >
-            <Link href="/services/callcenter">Voir l&apos;offre Call Center</Link>
+            <Link href="/services/callcenter">
+              Voir l&apos;offre Call Center
+            </Link>
           </Button>
         </div>
 
@@ -51,7 +50,10 @@ export default function CtaSection() {
             "Devis gratuit et sans engagement",
             "Interlocuteur dédié dès le premier échange",
           ].map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-white/60 text-xs">
+            <div
+              key={i}
+              className="flex items-center gap-2 text-white/60 text-xs"
+            >
               <span className="text-white/40">✓</span>
               {item}
             </div>
