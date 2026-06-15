@@ -6,31 +6,37 @@ import { Badge } from "@/components/ui/badge";
 
 const TESTIMONIALS = [
   {
-    quote: "On cherchait un call center francophone fiable pour nos campagnes B2B en France. On a trouvé une équipe qui comprend nos prospects mieux que certains de nos propres commerciaux. Taux de prise de RDV en hausse de 40% dès le deuxième mois.",
+    quote:
+      "On cherchait un call center francophone fiable pour nos campagnes B2B en France. On a trouvé une équipe qui comprend nos prospects mieux que certains de nos propres commerciaux. Taux de prise de RDV en hausse de 40% dès le deuxième mois.",
     author: "François B.",
     role: "Directeur Commercial",
     company: "PME industrielle, Lyon",
     tag: "Call Center",
     color: "var(--gold)",
-    avatar: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=80&h=80&fit=crop&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=80&h=80&fit=crop&q=80",
   },
   {
-    quote: "Livraison en 6 semaines, dans les délais et dans le budget. Le code est propre, la documentation complète. On a déjà démarré un deuxième projet — cette fois plus ambitieux.",
+    quote:
+      "Livraison en 6 semaines, dans les délais et dans le budget. Le code est propre, la documentation complète. On a déjà démarré un deuxième projet — cette fois plus ambitieux.",
     author: "Hery R.",
     role: "Directeur Général",
     company: "Groupe éducatif, Antananarivo",
     tag: "Développement Web",
     color: "var(--brand)",
-    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&q=80",
   },
   {
-    quote: "80 000 documents numérisés en trois mois, zéro interruption de service. Chaque fichier est indexé, searchable, conforme RGPD. Label Technology a transformé une contrainte en vrai avantage opérationnel.",
+    quote:
+      "80 000 documents numérisés en trois mois, zéro interruption de service. Chaque fichier est indexé, searchable, conforme RGPD. Label Technology a transformé une contrainte en vrai avantage opérationnel.",
     author: "Isabelle M.",
     role: "Directrice des Systèmes d'Information",
     company: "Institution publique, Madagascar",
     tag: "Traitement de données",
     color: "var(--brand-lt)",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&q=80",
   },
 ];
 
@@ -39,20 +45,26 @@ export default function Testimonials() {
     <section className="py-24 px-6" style={{ backgroundColor: "var(--paper)" }}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-14">
-          <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>TÉMOIGNAGES CLIENTS</p>
+          <p className="label-tag mb-3" style={{ color: "var(--brand)" }}>
+            TÉMOIGNAGES CLIENTS
+          </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground">
-            Des résultats,<br />
+            Des résultats,
+            <br />
             <span style={{ color: "var(--brand)" }}>pas des promesses.</span>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, i) => (
-            <Card key={i} className="flex flex-col">
+            <Card
+              key={i}
+              className="flex flex-col shadow-lg hover:shadow-xl transition-all hover:scale-105"
+            >
               <CardContent className="pt-7 pb-4 flex flex-col flex-1">
                 <Badge
                   variant="secondary"
-                  className="label-tag text-[10px] mb-6 self-start px-2 py-1 rounded-sm border-0"
+                  className="text-[10px]  rounded-full border-0"
                   style={{
                     backgroundColor: `color-mix(in srgb, ${t.color} 15%, transparent)`,
                     color: t.color,
@@ -83,8 +95,12 @@ export default function Testimonials() {
                     className="rounded-full object-cover shrink-0"
                   />
                   <div>
-                    <div className="font-medium text-sm mb-0.5 text-foreground">{t.author}</div>
-                    <div className="text-xs text-muted-foreground">{t.role} · {t.company}</div>
+                    <div className="font-medium text-sm mb-0.5 text-foreground">
+                      {t.author}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {t.role} · {t.company}
+                    </div>
                   </div>
                 </div>
               </CardFooter>
